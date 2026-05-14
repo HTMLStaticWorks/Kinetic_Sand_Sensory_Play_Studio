@@ -1,0 +1,332 @@
+
+ULTIMATE PREMIUM MASTER PROMPT — TACTILE SENSORY EXPERIENCE VERSION
+
+You are a Senior Frontend Developer, Interactive Experience Designer, and Premium UI/UX Architect.
+
+Build a COMPLETE PREMIUM MULTIPAGE WEBSITE for a modern “Kinetic Sand & Sensory Play Studio” using:
+
+- HTML5
+- CSS3
+- Bootstrap 5 CDN ONLY
+- Vanilla JavaScript ONLY
+
+The website must feel like:
+
+- A tactile digital experience
+- An immersive sensory environment
+- A premium experiential studio
+- A modern editorial showcase
+- A cinematic interactive brand
+
+The website MUST NOT look like:
+
+- A daycare website
+- A preschool website
+- A toy shop
+- A generic children’s template
+- A glassmorphism startup landing page
+
+==================================================
+CORE WEBSITE EXPERIENCE
+==================================================
+
+The visual identity should be based on:
+
+- Tactile Minimalism
+- Digital Sand Physics
+- Material-inspired interaction
+- Editorial modern layouts
+- Immersive storytelling
+
+The interface should visually feel:
+
+- Molded
+- Sculpted
+- Flowing
+- Soft
+- Pressure-responsive
+- Material-based
+- Sensory-inspired
+
+The website should emotionally simulate the feeling of touching and shaping kinetic sand.
+
+==================================================
+CORE DEVELOPMENT RULES
+==================================================
+
+- Use ONLY Bootstrap 5 + Vanilla JavaScript
+- No React
+- No Tailwind
+- No jQuery
+- Use semantic HTML5
+- Keep code clean and beginner editable
+- Maintain ONE premium design system
+- Match every visual element to the tactile sensory theme
+
+==================================================
+STRICT FOLDER STRUCTURE
+==================================================
+
+/project-root
+
+index.html
+about.html
+experiences.html
+experience-details.html
+birthday-parties.html
+gallery.html
+booking.html
+waiver.html
+blog.html
+blog-details.html
+contact.html
+faq.html
+404.html
+coming-soon.html
+
+/assets
+   /css
+      style.css
+      dark-mode.css
+      rtl.css
+
+   /js
+      main.js
+
+   /images
+
+==================================================
+DESIGN SYSTEM
+==================================================
+
+Use premium earthy palettes ONLY:
+
+- Warm sand
+- Clay beige
+- Matte charcoal
+- Dusty lavender
+- Soft peach
+- Off-white neutrals
+- Muted terracotta
+
+Avoid:
+
+- Rainbow overload
+- Neon overload
+- Glassmorphism
+- Cartoon colors
+- Childish UI
+
+Typography Style:
+
+- Headings → Cabinet Grotesk / General Sans style
+- Body → Inter / Satoshi style
+
+Rules:
+
+- Oversized editorial typography
+- Strong whitespace hierarchy
+- Clean visual rhythm
+- Soft tactile depth
+- Minimal but immersive UI
+- Avoid generic boxed layouts
+
+==================================================
+VISUAL EXPERIENCE RULES
+==================================================
+
+Use:
+
+- Organic section dividers
+- Flowing layouts
+- Cinematic imagery
+- Subtle grain textures
+- Topographic patterns
+- Soft shadow depth
+- Layered editorial compositions
+- Floating tactile elements
+
+Avoid:
+
+- Repetitive grids
+- Flat template sections
+- Overcrowded content
+- Cheap stock-style layouts
+
+==================================================
+RESPONSIVE RULES
+==================================================
+
+Mobile (<1100px):
+
+- Hamburger menu only
+- Offcanvas navigation
+- Large touch-friendly buttons
+- Optimized immersive layouts
+
+Desktop (1100px+):
+
+- Full navigation
+- Cinematic section spacing
+- Editorial alignment system
+
+Requirements:
+
+- No horizontal scrolling
+- No overlap
+- No broken responsiveness
+- Minimum tap area: 44px
+
+==================================================
+HEADER RULES
+==================================================
+
+Header must remain identical across all pages.
+
+Include:
+
+- Minimal SVG logo
+- Premium brand typography
+- Navigation
+- Theme toggle
+- RTL toggle
+- Sticky transparent navbar
+- Smooth offcanvas mobile menu
+
+Navbar behavior:
+
+- Slight blur ONLY if necessary
+- Smooth scroll transition
+- Material-inspired hover effects
+
+==================================================
+HOMEPAGE EXPERIENCE
+==================================================
+
+Hero Section:
+
+- Full-screen cinematic layout
+- Macro kinetic sand visuals
+- Flowing particle-inspired movement
+- Oversized typography
+- Minimal CTA buttons
+
+Example tone:
+
+- “Shape Imagination.”
+- “Touch Creativity.”
+- “Where Texture Becomes Play.”
+
+Homepage sections:
+
+1. Immersive Hero Experience
+2. About the Sensory Studio
+3. Sensory Experiences
+4. Birthday Experiences
+5. Educational Benefits
+6. Sensory Tools Gallery
+7. Testimonials
+8. Booking + Waiver CTA
+9. FAQ
+10. Contact
+
+==================================================
+ANIMATION RULES
+==================================================
+
+Animations must feel:
+
+- Slow
+- Physical
+- Smooth
+- Elegant
+- Material-responsive
+
+Use:
+
+- Parallax scrolling
+- Soft hover deformation
+- Floating particles
+- Cursor interaction effects
+- Smooth reveal animations
+- Inertia-inspired transitions
+
+Avoid:
+
+- Excessive bouncing
+- Flashy effects
+- Heavy animation overload
+
+==================================================
+BOOKING EXPERIENCE
+==================================================
+
+Booking UI should feel premium and minimal.
+
+Include:
+
+- Session selection
+- Birthday package inquiry
+- Online waiver
+- Responsive form validation
+- Clean confirmation states
+
+==================================================
+SEO + ACCESSIBILITY
+==================================================
+
+Every page must include:
+
+- Unique title
+- Meta description
+- Open Graph tags
+- Canonical tag
+- Semantic HTML
+- Proper heading hierarchy
+- Alt text
+- JSON-LD schema
+
+Accessibility:
+
+- Keyboard navigation
+- ARIA labels
+- Accessible forms
+- Proper focus states
+- WCAG 2.1 AA compliance
+
+==================================================
+FINAL QUALITY REQUIREMENTS
+==================================================
+
+The final website must feel:
+
+- Modern
+- Artistic
+- Interactive
+- Premium
+- Cinematic
+- Tactile
+- Immersive
+
+The final experience should resemble:
+
+- A modern creative studio
+- An interactive art installation
+- A boutique sensory lab
+- A luxury experiential brand
+
+NOT a generic kids website.
+
+==================================================
+FINAL OUTPUT MUST BE
+==================================================
+
+- Clean
+- Premium
+- Responsive
+- SEO optimized
+- Beginner friendly
+- Hosting ready
+- Production ready
+- Visually unique
+- Tactile and immersive

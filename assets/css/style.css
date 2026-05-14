@@ -1,0 +1,296 @@
+:root {
+    /* Color Palette */
+    --color-warm-sand: #D4C1A5;
+    --color-clay-beige: #B8A79B;
+    --color-matte-charcoal: #36454F;
+    --color-matte-charcoal-rgb: 54, 69, 79;
+    --color-dusty-lavender: #B0A7C6;
+    --color-soft-peach: #FADCD2;
+    --color-soft-peach-dark: #E0C7BF; /* Darker shade for hover */
+    --color-off-white-neutral: #F8F8F8;
+    --color-off-white-neutral-rgb: 248, 248, 248;
+    --color-muted-terracotta: #CC7C6B;
+    --color-muted-terracotta-dark: #B36B5E; /* Darker shade for hover */
+
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* General Spacing */
+    --spacing-unit: 1rem;
+    --section-padding-y: 6rem; /* Cinematic section spacing */
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-matte-charcoal);
+    background-color: var(--color-off-white-neutral);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-matte-charcoal);
+    margin-bottom: var(--spacing-unit);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4rem; /* Oversized editorial typography */
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-unit);
+}
+
+.text-muted {
+    color: #555 !important;
+}
+
+.bg-dark .text-muted {
+    color: #bbb !important;
+}
+
+/* General Layout */
+.container {
+    padding-top: var(--spacing-unit);
+    padding-bottom: var(--spacing-unit);
+}
+
+section {
+    padding-top: var(--section-padding-y);
+    padding-bottom: var(--section-padding-y);
+}
+
+/* Tactile depth and subtle shadows */
+.card, .btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem; /* Consistent border radius */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effects */
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--color-muted-terracotta);
+    border-color: var(--color-muted-terracotta);
+    color: var(--color-off-white-neutral);
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-muted-terracotta-dark);
+    border-color: var(--color-muted-terracotta-dark);
+    transform: translateY(-3px); /* Subtle lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Navbar styling (initial, will be refined) */
+.navbar {
+    background-color: rgba(var(--color-off-white-neutral), 0.9); /* Slightly transparent */
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-matte-charcoal);
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--color-matte-charcoal);
+    margin: 0 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-muted-terracotta);
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Full-screen cinematic layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-off-white-neutral); /* Text color for hero */
+    background-image: url('../images/hero-background.jpg'); /* Placeholder background image */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Ensures content stays within bounds */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for better text readability */
+    z-index: 1;
+}
+
+.hero-section > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 5rem; /* Even more oversized for cinematic feel */
+    color: var(--color-off-white-neutral);
+    margin-bottom: 1rem;
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* Parallax Background */
+.parallax-bg {
+    background-attachment: fixed;
+}
+
+/* Soft Hover Deformation for Cards */
+.card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+/* Floating Particles Canvas */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind content, above background image */
+}
+
+/* Smooth Reveal Animations */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-item.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Icon styling for educational benefits */
+.icon-large {
+    font-size: 3rem;
+    color: var(--color-muted-terracotta);
+}
+
+/* Masonry for gallery (requires Bootstrap 5.3+ or custom JS) */
+.row[data-masonry] {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1439px) {
+    .hero-section h1 {
+        font-size: 4.5rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    .hero-section .lead {
+        font-size: 1.25rem;
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    .section-padding-y {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        height: 80vh;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .section-padding-y {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+    .custom-cursor {
+        display: none; /* Hide custom cursor on small screens */
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+}

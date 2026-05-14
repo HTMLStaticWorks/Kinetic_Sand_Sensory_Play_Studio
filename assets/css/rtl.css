@@ -1,0 +1,103 @@
+/* RTL Styles */
+
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .navbar-nav .nav-item .nav-link {
+    margin-left: 0.75rem;
+    margin-right: 0;
+}
+
+html[dir="rtl"] .navbar-nav {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+/* Adjustments for Bootstrap's default left-aligned components */
+html[dir="rtl"] .ms-auto {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+html[dir="rtl"] .me-auto {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+}
+
+html[dir="rtl"] .text-start {
+    text-align: right !important;
+}
+
+html[dir="rtl"] .text-end {
+    text-align: left !important;
+}
+
+/* General layout adjustments for RTL */
+html[dir="rtl"] .container,
+html[dir="rtl"] .container-fluid {
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    padding-right: var(--bs-gutter-x, 0.75rem);
+}
+
+html[dir="rtl"] .row > * {
+    float: right; /* Ensure columns float correctly */
+}
+
+/* Adjustments for specific components */
+html[dir="rtl"] .card-body {
+    text-align: right;
+}
+
+html[dir="rtl"] .list-unstyled {
+    padding-right: 0;
+    padding-left: initial;
+}
+
+html[dir="rtl"] .list-unstyled li {
+    text-align: right;
+}
+
+html[dir="rtl"] .form-check-input {
+    margin-left: 0.5em;
+    margin-right: -1.5em;
+}
+
+html[dir="rtl"] .form-check-label {
+    padding-right: 1.5em;
+    padding-left: 0;
+}
+
+html[dir="rtl"] .input-group > .form-control:not(:last-child),
+html[dir="rtl"] .input-group > .form-select:not(:last-child) {
+    border-top-left-radius: var(--bs-border-radius);
+    border-bottom-left-radius: var(--bs-border-radius);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+html[dir="rtl"] .input-group > .btn:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--bs-border-radius);
+    border-bottom-right-radius: var(--bs-border-radius);
+}
+
+/* Adjustments for icons */
+html[dir="rtl"] .bi-check-circle-fill {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+/* Adjustments for hero section text alignment if needed */
+html[dir="rtl"] .hero-section .container {
+    text-align: right;
+}
+
+/* Ensure proper alignment for toggles in RTL */
+html[dir="rtl"] #theme-toggle,
+html[dir="rtl"] #rtl-toggle {
+    margin-left: 0;
+    margin-right: 0.75rem;
+}

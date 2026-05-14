@@ -1,0 +1,173 @@
+
+MASTER RULES — TACTILE IMMERSIVE EXPERIENCE VERSION
+
+==================================================
+CORE DEVELOPMENT RULES
+==================================================
+
+1. Use Bootstrap 5 CDN ONLY
+2. Use Vanilla JavaScript ONLY
+3. Do NOT use jQuery
+4. Do NOT use Tailwind
+5. Do NOT use React
+6. Use semantic HTML5
+7. Mobile-first development required
+8. RTL support required
+9. Dark mode required
+10. Keep code beginner editable
+
+==================================================
+TACTILE EXPERIENCE RULES
+==================================================
+
+11. Website must feel tactile and immersive
+12. UI must simulate material-inspired interaction
+13. Layouts must feel sculpted and flowing
+14. Avoid rigid boxed template sections
+15. Use editorial asymmetrical layouts
+16. Use subtle tactile depth and textures
+17. Use cinematic whitespace hierarchy
+18. Maintain immersive storytelling flow
+19. Use modern experiential branding
+20. Avoid childish design aesthetics
+
+==================================================
+VISUAL DESIGN RULES
+==================================================
+
+21. Avoid glassmorphism
+22. Avoid rainbow-heavy palettes
+23. Avoid cartoon icons and clipart
+24. Avoid generic startup templates
+25. Use earthy premium tones only
+26. Maintain premium visual consistency
+27. Use strong typography hierarchy
+28. Use subtle grain and contour textures
+29. Maintain clean layered compositions
+30. Avoid repetitive grids and duplicate sections
+
+==================================================
+RESPONSIVE & NAVBAR RULES
+==================================================
+
+31. No broken responsiveness
+32. No horizontal scrolling
+33. No overlapping elements
+34. Navbar must work perfectly on:
+    - 360px
+    - 768px
+    - 1024px
+    - 1440px
+35. Hamburger menu must always function correctly
+36. Mobile menu links must remain visible
+37. Never mix desktop navigation with hamburger menu
+38. Navbar alignment must remain consistent
+39. Theme and RTL toggles must never overlap
+40. Minimum tap area: 44px
+
+==================================================
+HERO SECTION RULES
+==================================================
+
+41. Hero section must feel cinematic
+42. Hero text must never overlap
+43. Hero imagery must remain immersive in dark mode
+44. Use oversized editorial typography
+45. Maintain strong text contrast
+46. Avoid repetitive hero layouts
+47. Hero visuals must feel premium and artistic
+48. Background visuals must not stretch
+
+==================================================
+ANIMATION RULES
+==================================================
+
+49. Use smooth and elegant animations only
+50. Motion should feel physical and material-based
+51. Use subtle parallax scrolling
+52. Use soft hover deformation effects
+53. Use lightweight particle interactions
+54. Avoid flashy or chaotic animation
+55. Maintain optimized animation performance
+56. Avoid unnecessary motion overload
+
+==================================================
+LAYOUT & UI/UX RULES
+==================================================
+
+57. Maintain clean section flow
+58. Use reusable components
+59. Maintain professional spacing hierarchy
+60. Avoid cluttered sections
+61. Keep CTA placement logical and minimal
+62. Match every section to tactile sensory branding
+63. Use immersive storytelling layouts
+64. Avoid outdated 2x2 repetitive layouts
+65. Maintain handcrafted visual feel
+66. Avoid template-style compositions
+
+==================================================
+BOOKING & FORM RULES
+==================================================
+
+67. Booking forms must remain responsive
+68. Waiver forms must feel simple and premium
+69. Form validation must work correctly
+70. Contact buttons must redirect correctly
+71. Forms must remain accessible
+72. CTA buttons must remain visually consistent
+
+==================================================
+TYPOGRAPHY & BRANDING RULES
+==================================================
+
+73. Maintain consistent font hierarchy
+74. Use modern editorial typography
+75. Maintain premium CTA styling
+76. Maintain consistent border radius
+77. Maintain subtle shadow depth
+78. Avoid weak typography combinations
+79. Maintain tactile luxury branding
+80. Keep branding immersive and artistic
+
+==================================================
+SEO & ACCESSIBILITY RULES
+==================================================
+
+81. Add SEO meta tags on every page
+82. Add alt text for all images
+83. Use semantic heading hierarchy
+84. Use accessible forms and focus states
+85. Follow WCAG 2.1 AA standards
+86. Use ARIA labels where required
+
+==================================================
+PERFORMANCE RULES
+==================================================
+
+87. Keep loading performance optimized
+88. Avoid unnecessary CSS/JS
+89. Optimize image usage
+90. Keep animations lightweight
+91. Use reusable components efficiently
+92. Avoid performance-heavy effects
+
+==================================================
+FINAL QA VALIDATION
+==================================================
+
+93. All pages must be production-ready
+94. All buttons and navigation must work
+95. No broken links
+96. No duplicate CTAs
+97. No console errors
+98. Dark mode must work properly
+99. RTL mode must work properly
+100. Final website must feel:
+    - Modern
+    - Premium
+    - Artistic
+    - Immersive
+    - Tactile
+    - Cinematic
+    - Hosting ready

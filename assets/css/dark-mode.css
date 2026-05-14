@@ -1,0 +1,138 @@
+/* Dark Mode Styles */
+
+body.dark-mode {
+    background-color: var(--color-matte-charcoal);
+    color: var(--color-off-white-neutral);
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+    color: var(--color-off-white-neutral);
+}
+
+.dark-mode .navbar {
+    background-color: rgba(var(--color-matte-charcoal-rgb), 0.95);
+    border-bottom: 1px solid rgba(var(--color-off-white-neutral-rgb), 0.1);
+}
+
+.dark-mode .navbar-brand {
+    color: var(--color-off-white-neutral);
+}
+
+.dark-mode .nav-link {
+    color: var(--color-off-white-neutral);
+}
+
+.dark-mode .nav-link:hover {
+    color: var(--color-soft-peach);
+}
+
+.dark-mode .btn-primary {
+    background-color: var(--color-soft-peach);
+    border-color: var(--color-soft-peach);
+    color: var(--color-matte-charcoal);
+}
+
+.dark-mode .btn-primary:hover {
+    background-color: var(--color-soft-peach-dark);
+    border-color: var(--color-soft-peach-dark);
+}
+
+/* Cards in Dark Mode */
+.dark-mode .card {
+    background-color: var(--color-matte-charcoal);
+    border-color: rgba(var(--color-off-white-neutral-rgb), 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .card-title {
+    color: var(--color-off-white-neutral);
+}
+
+.dark-mode .card-text {
+    color: rgba(var(--color-off-white-neutral-rgb), 0.9);
+}
+
+/* Form Controls in Dark Mode */
+.dark-mode .form-control,
+.dark-mode .form-select {
+    background-color: rgba(var(--color-off-white-neutral-rgb), 0.1);
+    color: var(--color-off-white-neutral);
+    border-color: rgba(var(--color-off-white-neutral-rgb), 0.2);
+}
+
+.dark-mode .form-control::placeholder {
+    color: rgba(var(--color-off-white-neutral-rgb), 0.5);
+}
+
+.dark-mode .form-control:focus,
+.dark-mode .form-select:focus {
+    background-color: rgba(var(--color-off-white-neutral-rgb), 0.15);
+    border-color: var(--color-soft-peach);
+    box-shadow: 0 0 0 0.25rem rgba(250, 220, 210, 0.25);
+}
+
+.dark-mode .form-check-label {
+    color: var(--color-off-white-neutral);
+}
+
+/* Accordion in Dark Mode */
+.dark-mode .accordion-item {
+    background-color: var(--color-matte-charcoal);
+    border-color: rgba(var(--color-off-white-neutral-rgb), 0.1);
+}
+
+.dark-mode .accordion-button {
+    background-color: var(--color-matte-charcoal);
+    color: var(--color-off-white-neutral);
+}
+
+.dark-mode .accordion-button:not(.collapsed) {
+    color: var(--color-soft-peach);
+    background-color: var(--color-matte-charcoal);
+    box-shadow: inset 0 -1px 0 rgba(var(--color-off-white-neutral-rgb), 0.1);
+}
+
+.dark-mode .accordion-button::after {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Adjust arrow color */
+}
+
+.dark-mode .accordion-button:focus {
+    border-color: var(--color-soft-peach);
+    box-shadow: 0 0 0 0.25rem rgba(250, 220, 210, 0.25);
+}
+
+.dark-mode .accordion-body {
+    color: rgba(var(--color-off-white-neutral-rgb), 0.9);
+    background-color: var(--color-matte-charcoal);
+}
+
+/* Icons in Dark Mode */
+.dark-mode .icon-large {
+    color: var(--color-soft-peach);
+}
+
+/* Text colors for specific sections */
+.dark-mode .text-muted,
+.dark-mode .lead {
+    color: rgba(var(--color-off-white-neutral-rgb), 0.8) !important;
+}
+
+/* Fix for text-dark utility in dark mode */
+.dark-mode .text-dark {
+    color: var(--color-off-white-neutral) !important;
+}
+
+/* Backgrounds for sections */
+.dark-mode .bg-light {
+    background-color: #2a363f !important; /* Slightly lighter charcoal for contrast */
+}
+
+.dark-mode .navbar {
+    background-color: rgba(var(--color-matte-charcoal-rgb), 0.95);
+    border-bottom: 1px solid rgba(var(--color-off-white-neutral-rgb), 0.1);
+}
