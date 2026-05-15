@@ -3,41 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kinetic Sand & Sensory Play Studio is launching soon! Get ready for an immersive and tactile experience. Sign up for updates and follow our journey.">
-    <meta name="keywords" content="coming soon, launch, kinetic sand studio, sensory play, new website, updates, subscribe">
-    <meta property="og:title" content="Coming Soon | Kinetic Sand & Sensory Play Studio">
-    <meta property="og:description" content="Kinetic Sand & Sensory Play Studio is launching soon! Get ready for an immersive and tactile experience. Sign up for updates and follow our journey.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.kineticsandstudio.com/coming-soon.html">
-    <meta property="og:image" content="https://www.kineticsandstudio.com/assets/images/og-image-coming-soon.jpg">
-    <link rel="canonical" href="https://www.kineticsandstudio.com/coming-soon.html">
-    <title>Coming Soon - Kinetic Sand & Sensory Play Studio</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap 5 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
+    <title>Coming Soon - Kinetic Studio</title>
 </head>
 <body>
-    <!-- Header will go here -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Studio Logo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <span class="editorial-title">Kinetic Studio</span>
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="index2.html">Home 2</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
@@ -46,29 +37,32 @@
                             <a class="nav-link" href="experiences.html">Experiences</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="birthday-parties.html">Birthday Parties</a>
+                            <a class="nav-link" href="parties.html">Parties</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="booking.html">Booking</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="supportDropdown">
+                                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                <li><a class="dropdown-item" href="waiver.html">Waiver</a></li>
+                                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="faq.html">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link nav-link" id="theme-toggle" aria-label="Toggle theme">
-                                <i class="bi bi-moon-fill"></i> <!-- Placeholder for moon icon -->
+                                                <li class="nav-item ms-lg-3">
+                            <button class="btn-toggle-tactile" id="theme-toggle" aria-label="Toggle theme">
+                                <i class="bi bi-moon-fill"></i>
                             </button>
                         </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link nav-link" id="rtl-toggle" aria-label="Toggle RTL direction">
+                        <li class="nav-item ms-lg-2">
+                            <button class="btn-toggle-tactile text-btn" id="rtl-toggle" aria-label="Toggle RTL">
                                 RTL
                             </button>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="login.html" class="btn-tactile px-4 py-2 me-2" style="font-size: 0.85rem;">Login</a>
+                            <a href="dashboard.html" class="btn-tactile px-4 py-2" style="font-size: 0.85rem; background-color: var(--color-terracotta);">Dashboard</a>
                         </li>
                     </ul>
                 </div>
@@ -76,85 +70,24 @@
         </nav>
     </header>
 
-    <!-- Main content will go here -->
     <main>
-        <!-- 1. Coming Soon Hero Section -->
-        <section id="coming-soon-hero" class="hero-section text-center">
-            <div class="container">
-                <h1>Something Amazing is Coming!</h1>
-                <p class="lead">We're working hard to bring you an even more immersive and tactile experience.</p>
-            </div>
-        </section>
-
-        <!-- 2. Countdown Timer (Placeholder) -->
-        <section id="countdown" class="countdown-section bg-light">
-            <div class="container text-center">
-                <h2>Launch in:</h2>
-                <div class="row justify-content-center mt-4">
-                    <div class="col-md-8">
-                        <div class="d-flex justify-content-around align-items-center">
-                            <div class="countdown-item">
-                                <span class="display-4" id="days">00</span>
-                                <p class="lead">Days</p>
-                            </div>
-                            <div class="countdown-item">
-                                <span class="display-4" id="hours">00</span>
-                                <p class="lead">Hours</p>
-                            </div>
-                            <div class="countdown-item">
-                                <span class="display-4" id="minutes">00</span>
-                                <p class="lead">Minutes</p>
-                            </div>
-                            <div class="countdown-item">
-                                <span class="display-4" id="seconds">00</span>
-                                <p class="lead">Seconds</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Newsletter Signup -->
-        <section id="notify-me" class="notify-me-section">
-            <div class="container text-center">
-                <h2>Be the First to Know!</h2>
-                <p class="lead">Enter your email to get notified when we launch.</p>
+        <section class="py-5 d-flex align-items-center" style="min-height: calc(100vh - 80px); background-color: var(--color-sand);">
+            <div class="container text-center reveal-item">
+                <h1 class="display-large editorial-title">Launching <br>Soon.</h1>
+                <p class="lead opacity-75 mb-5">We're working hard to bring you an even more immersive and tactile experience.</p>
                 <form class="row justify-content-center mt-4">
                     <div class="col-md-6">
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control form-control-lg" placeholder="Your Email Address" aria-label="Your Email Address" required>
-                            <button class="btn btn-primary btn-lg" type="submit">Notify Me</button>
+                            <input type="email" class="form-control" placeholder="Enter your email" style="background: rgba(255,255,255,0.5); border: none; padding: 1.2rem;">
+                            <button class="btn-tactile px-4" type="submit">Notify Me</button>
                         </div>
                     </div>
                 </form>
             </div>
         </section>
-
-        <!-- 4. Social Media Links -->
-        <section id="follow-us" class="follow-us-section bg-light">
-            <div class="container text-center">
-                <h2>Follow Our Journey</h2>
-                <p class="lead">Stay connected with us on social media for sneak peeks and updates.</p>
-                <div class="mt-4">
-                    <a href="#" class="btn btn-outline-dark btn-lg me-3"><i class="bi bi-instagram"></i> Instagram</a>
-                    <a href="#" class="btn btn-outline-dark btn-lg me-3"><i class="bi bi-facebook"></i> Facebook</a>
-                    <a href="#" class="btn btn-outline-dark btn-lg"><i class="bi bi-youtube"></i> YouTube</a>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer will go here -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>

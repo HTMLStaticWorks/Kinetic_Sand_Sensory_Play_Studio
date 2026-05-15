@@ -5,39 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore the Kinetic Sand & Sensory Play Studio blog for articles on sensory play benefits, creative ideas, studio news, and expert insights.">
     <meta name="keywords" content="sensory play blog, kinetic sand benefits, creative ideas, studio news, tactile play insights, mindful play articles">
-    <meta property="og:title" content="Blog | Kinetic Sand & Sensory Play Studio">
-    <meta property="og:description" content="Explore the Kinetic Sand & Sensory Play Studio blog for articles on sensory play benefits, creative ideas, studio news, and expert insights.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.kineticsandstudio.com/blog.html">
-    <meta property="og:image" content="https://www.kineticsandstudio.com/assets/images/og-image-blog.jpg">
-    <link rel="canonical" href="https://www.kineticsandstudio.com/blog.html">
-    <title>Blog - Kinetic Sand & Sensory Play Studio</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap 5 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
+    <title>Blog - Kinetic Sand & Sensory Play Studio</title>
 </head>
 <body>
-    <!-- Header will go here -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Studio Logo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <span class="editorial-title">Kinetic Studio</span>
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="index2.html">Home 2</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
@@ -46,29 +39,32 @@
                             <a class="nav-link" href="experiences.html">Experiences</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="birthday-parties.html">Birthday Parties</a>
+                            <a class="nav-link" href="parties.html">Parties</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="booking.html">Booking</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="supportDropdown">
+                                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                <li><a class="dropdown-item" href="waiver.html">Waiver</a></li>
+                                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="faq.html">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link nav-link" id="theme-toggle" aria-label="Toggle theme">
-                                <i class="bi bi-moon-fill"></i> <!-- Placeholder for moon icon -->
+                                                <li class="nav-item ms-lg-3">
+                            <button class="btn-toggle-tactile" id="theme-toggle" aria-label="Toggle theme">
+                                <i class="bi bi-moon-fill"></i>
                             </button>
                         </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link nav-link" id="rtl-toggle" aria-label="Toggle RTL direction">
+                        <li class="nav-item ms-lg-2">
+                            <button class="btn-toggle-tactile text-btn" id="rtl-toggle" aria-label="Toggle RTL">
                                 RTL
                             </button>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="login.html" class="btn-tactile px-4 py-2 me-2" style="font-size: 0.85rem;">Login</a>
+                            <a href="dashboard.html" class="btn-tactile px-4 py-2" style="font-size: 0.85rem; background-color: var(--color-terracotta);">Dashboard</a>
                         </li>
                     </ul>
                 </div>
@@ -76,111 +72,150 @@
         </nav>
     </header>
 
-    <!-- Main content will go here -->
     <main>
-        <!-- 1. Blog Hero Section -->
-        <section id="blog-hero" class="hero-section">
-            <div class="container text-center">
-                <h1>Our Studio Blog</h1>
-                <p class="lead">Stay updated with the latest news, insights, and creative inspirations from our sensory world.</p>
+        <section id="blog-hero" class="py-5" style="background-color: var(--color-sand);">
+            <div class="container text-center reveal-item">
+                <h1 class="display-large editorial-title">Studio <br>Insights.</h1>
+                <p class="lead opacity-75">Latest news, insights, and creative inspirations from our sensory world.</p>
             </div>
         </section>
 
-        <!-- 2. Featured Blog Posts -->
-        <section id="featured-posts" class="featured-posts-section bg-light">
+        <!-- 2. Editor's Pick -->
+        <section id="editors-pick" class="pb-5">
             <div class="container">
-                <h2 class="text-center mb-5">Featured Articles</h2>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100">
-                            <img src="assets/images/blog-featured-1.jpg" class="card-img-top" alt="Featured Blog Post 1">
-                            <div class="card-body">
-                                <h5 class="card-title">The Benefits of Kinetic Sand for All Ages</h5>
-                                <p class="card-text">Discover how kinetic sand can enhance creativity, reduce stress, and improve motor skills.</p>
-                                <a href="blog-details.html" class="btn btn-primary">Read More</a>
-                            </div>
+                <div class="tactile-card p-0 overflow-hidden reveal-item" style="border: none; background-color: var(--color-off-white);">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-lg-7">
+                            <img src="assets/images/hero-macro-sand.png" class="img-fluid w-100" style="min-height: 400px; object-fit: cover;" alt="Featured Post">
                         </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100">
-                            <img src="assets/images/blog-featured-2.jpg" class="card-img-top" alt="Featured Blog Post 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Designing Your Own Sensory Play Space at Home</h5>
-                                <p class="card-text">Tips and tricks for creating an engaging and calming sensory environment in your home.</p>
-                                <a href="blog-details.html" class="btn btn-primary">Read More</a>
-                            </div>
+                        <div class="col-lg-5 p-5">
+                            <span class="text-terracotta small fw-bold text-uppercase letter-spacing-lg mb-3 d-block">Editor's Choice</span>
+                            <h2 class="editorial-title h1 mb-4">The Art of Flow: <br>Mastering Macro Sculpting</h2>
+                            <p class="text-muted mb-5">Explore the intricate world of macro sand photography and the techniques used to capture the ephemeral beauty of kinetic forms.</p>
+                            <a href="blog-details.html" class="btn-tactile">Read the Feature</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. All Blog Posts (Grid) -->
-        <section id="all-posts" class="all-posts-section">
+        <!-- 3. Sensory ASMR -->
+        <section id="asmr" class="section-padding" style="background-color: var(--color-charcoal); color: var(--color-off-white);">
             <div class="container">
-                <h2 class="text-center mb-5">All Articles</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <img src="assets/images/blog-post-1.jpg" class="card-img-top" alt="Blog Post 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Mindful Moments with Kinetic Sand</h5>
-                                <p class="card-text">Explore how sensory play can be a powerful tool for mindfulness and relaxation.</p>
-                                <a href="blog-details.html" class="btn btn-primary">Read More</a>
+                <div class="row align-items-center g-5">
+                    <div class="col-md-6 reveal-item">
+                        <h2 class="display-medium editorial-title mb-4" style="color: var(--color-off-white);">Sensory <br>ASMR</h2>
+                        <p class="lead opacity-75 mb-5">Close your eyes and listen to the rhythmic crunch and soft collapse of kinetic sand. A pure auditory escape.</p>
+                        <div class="tactile-card bg-transparent border-white-opacity-10 p-4 d-flex align-items-center gap-4">
+                            <button class="icon-shape bg-peach text-charcoal border-0 shadow-sm" style="width: 50px; height: 50px;"><i class="bi bi-play-fill"></i></button>
+                            <div class="flex-grow-1">
+                                <div class="asmr-waveform d-flex align-items-end gap-1" style="height: 30px;">
+                                    <div style="width: 3px; height: 10px; background: var(--color-peach); opacity: 0.5;"></div>
+                                    <div style="width: 3px; height: 20px; background: var(--color-peach); opacity: 0.8;"></div>
+                                    <div style="width: 3px; height: 15px; background: var(--color-peach);"></div>
+                                    <div style="width: 3px; height: 25px; background: var(--color-peach);"></div>
+                                    <div style="width: 3px; height: 10px; background: var(--color-peach); opacity: 0.5;"></div>
+                                    <div style="width: 3px; height: 20px; background: var(--color-peach); opacity: 0.8;"></div>
+                                    <div style="width: 3px; height: 15px; background: var(--color-peach);"></div>
+                                    <div style="width: 3px; height: 25px; background: var(--color-peach);"></div>
+                                </div>
+                                <span class="small opacity-50 mt-2 d-block">Track 01: The Slow Melt (02:45)</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <img src="assets/images/blog-post-2.jpg" class="card-img-top" alt="Blog Post 2">
-                            <div class="card-body">
-                                <h5 class="card-title">The Science Behind Tactile Play</h5>
-                                <p class="card-text">Delve into the neurological benefits of engaging with different textures.</p>
-                                <a href="blog-details.html" class="btn btn-primary">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <img src="assets/images/blog-post-3.jpg" class="card-img-top" alt="Blog Post 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Interview with a Sensory Play Expert</h5>
-                                <p class="card-text">Gain insights from a leading expert in childhood development and sensory integration.</p>
-                                <a href="blog-details.html" class="btn btn-primary">Read More</a>
-                            </div>
+                    <div class="col-md-6 reveal-item text-center">
+                        <div class="organic-shape bg-sand p-5 d-inline-block shadow-lg">
+                            <i class="bi bi-headphones display-1 text-charcoal"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Newsletter Signup -->
-        <section id="newsletter" class="newsletter-section bg-light">
-            <div class="container text-center">
-                <h2>Join Our Creative Community</h2>
-                <p class="lead">Subscribe to our newsletter for exclusive content, workshop announcements, and special offers.</p>
-                <form class="row justify-content-center mt-4">
-                    <div class="col-md-6">
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" required>
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
+        <!-- 4. Community Canvas -->
+        <section id="community-canvas" class="section-padding bg-white">
+            <div class="container">
+                <div class="text-center mb-5 reveal-item">
+                    <h2 class="display-medium editorial-title mb-4">Community <br>Canvas</h2>
+                    <p class="lead text-muted">A showcase of masterpieces created by our studio explorers.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 reveal-item">
+                        <div class="tactile-card p-0 overflow-hidden border-0 shadow-sm">
+                            <img src="assets/images/pulse-1.jpg" class="img-fluid w-100" alt="User Art">
+                            <div class="p-3 bg-light text-center">
+                                <span class="small fw-bold text-charcoal">@ArtByAria</span>
+                            </div>
                         </div>
                     </div>
-                </form>
+                    <div class="col-md-4 reveal-item" style="transition-delay: 0.1s;">
+                        <div class="tactile-card p-0 overflow-hidden border-0 shadow-sm">
+                            <img src="assets/images/pulse-2.jpg" class="img-fluid w-100" alt="User Art">
+                            <div class="p-3 bg-light text-center">
+                                <span class="small fw-bold text-charcoal">@SensoryExplorer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal-item" style="transition-delay: 0.2s;">
+                        <div class="tactile-card p-0 overflow-hidden border-0 shadow-sm">
+                            <img src="assets/images/pulse-3.jpg" class="img-fluid w-100" alt="User Art">
+                            <div class="p-3 bg-light text-center">
+                                <span class="small fw-bold text-charcoal">@SandSculpt_Leo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <button class="btn btn-outline-charcoal rounded-pill px-5" style="border: 1px solid var(--color-charcoal); color: var(--color-charcoal);">Submit Your Art</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="all-posts" class="section-padding">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-md-6 reveal-item">
+                        <div class="tactile-card">
+                            <img src="assets/images/about-studio.png" class="img-fluid rounded-4 mb-4" alt="Post 1">
+                            <div class="editorial-title h3 mb-3">The Benefits of Kinetic Sand</div>
+                            <p class="text-muted small mb-4">Discover how kinetic sand can enhance creativity and improve motor skills.</p>
+                            <a href="blog-details.html" class="btn-tactile px-4 py-2" style="font-size: 0.8rem;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 reveal-item" style="transition-delay: 0.1s;">
+                        <div class="tactile-card">
+                            <img src="assets/images/experience-lab.png" class="img-fluid rounded-4 mb-4" alt="Post 2">
+                            <div class="editorial-title h3 mb-3">Sensory Play at Home</div>
+                            <p class="text-muted small mb-4">Tips for creating an engaging and calming sensory environment.</p>
+                            <a href="blog-details.html" class="btn-tactile px-4 py-2" style="font-size: 0.8rem;">Read More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer will go here -->
-    <footer>
+    <footer class="section-padding" style="background-color: var(--color-charcoal); color: var(--color-off-white);">
         <div class="container">
-            <p>&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h5 class="editorial-title mb-4" style="color: var(--color-off-white);">Kinetic Studio</h5>
+                    <p class="opacity-75 small">Shape Imagination. Touch Creativity.</p>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-4 opacity-50 text-uppercase small letter-spacing-lg">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none opacity-75" style="color: var(--color-off-white);">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none opacity-75" style="color: var(--color-off-white);">About</a></li>
+                        <li class="mb-2"><a href="parties.html" class="text-decoration-none opacity-75" style="color: var(--color-off-white);">Parties</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-decoration-none opacity-75" style="color: var(--color-off-white);">Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
-
-    <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>

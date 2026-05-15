@@ -1,103 +1,115 @@
-/* RTL Styles */
+/* Premium RTL Overrides */
+
+html[dir="rtl"] {
+    direction: rtl;
+}
 
 html[dir="rtl"] body {
-    direction: rtl;
     text-align: right;
 }
 
-html[dir="rtl"] .navbar-nav .nav-item .nav-link {
-    margin-left: 0.75rem;
-    margin-right: 0;
-}
-
-html[dir="rtl"] .navbar-nav {
-    margin-right: auto !important;
-    margin-left: 0 !important;
-}
-
-/* Adjustments for Bootstrap's default left-aligned components */
 html[dir="rtl"] .ms-auto {
-    margin-left: 0 !important;
     margin-right: auto !important;
+    margin-left: 0 !important;
 }
 
 html[dir="rtl"] .me-auto {
-    margin-right: 0 !important;
     margin-left: auto !important;
+    margin-right: 0 !important;
 }
 
-html[dir="rtl"] .text-start {
+html[dir="rtl"] .ms-lg-3,
+html[dir="rtl"] .ms-lg-2 {
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
+}
+
+html[dir="rtl"] .text-md-start {
     text-align: right !important;
 }
 
-html[dir="rtl"] .text-end {
+html[dir="rtl"] .text-md-end {
     text-align: left !important;
 }
 
-/* General layout adjustments for RTL */
-html[dir="rtl"] .container,
-html[dir="rtl"] .container-fluid {
-    padding-left: var(--bs-gutter-x, 0.75rem);
-    padding-right: var(--bs-gutter-x, 0.75rem);
+html[dir="rtl"] .social-links a {
+    margin-right: 0 !important;
+    margin-left: 1.5rem !important;
 }
 
-html[dir="rtl"] .row > * {
-    float: right; /* Ensure columns float correctly */
+html[dir="rtl"] .bi-arrow-right::before {
+    content: "\F12C"; /* Arrow left */
 }
 
-/* Adjustments for specific components */
-html[dir="rtl"] .card-body {
-    text-align: right;
-}
-
-html[dir="rtl"] .list-unstyled {
-    padding-right: 0;
-    padding-left: initial;
-}
-
-html[dir="rtl"] .list-unstyled li {
-    text-align: right;
-}
-
-html[dir="rtl"] .form-check-input {
-    margin-left: 0.5em;
-    margin-right: -1.5em;
-}
-
-html[dir="rtl"] .form-check-label {
-    padding-right: 1.5em;
-    padding-left: 0;
-}
-
-html[dir="rtl"] .input-group > .form-control:not(:last-child),
-html[dir="rtl"] .input-group > .form-select:not(:last-child) {
-    border-top-left-radius: var(--bs-border-radius);
-    border-bottom-left-radius: var(--bs-border-radius);
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-html[dir="rtl"] .input-group > .btn:not(:first-child) {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: var(--bs-border-radius);
-    border-bottom-right-radius: var(--bs-border-radius);
-}
-
-/* Adjustments for icons */
+html[dir="rtl"] .bi-geo-alt-fill,
+html[dir="rtl"] .bi-telephone-fill,
+html[dir="rtl"] .bi-envelope-fill,
 html[dir="rtl"] .bi-check-circle-fill {
-    margin-right: 0;
-    margin-left: 0.5rem;
+    margin-right: 0 !important;
+    margin-left: 0.5rem !important;
 }
 
-/* Adjustments for hero section text alignment if needed */
-html[dir="rtl"] .hero-section .container {
+html[dir="rtl"] .tactile-card {
+    box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.05),
+                10px -10px 30px rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode html[dir="rtl"] .tactile-card {
+    box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.4),
+                10px -10px 30px rgba(255, 255, 255, 0.02);
+}
+
+html[dir="rtl"] .organic-shape {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+html[dir="rtl"] .editorial-title {
+    letter-spacing: -0.01em;
+}
+
+/* More Utility Overrides for 100% RTL Functionality */
+html[dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+html[dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+html[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+html[dir="rtl"] .me-4 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+html[dir="rtl"] .me-5 { margin-left: 3rem !important; margin-right: 0 !important; }
+
+html[dir="rtl"] .ms-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+html[dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+html[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+html[dir="rtl"] .ms-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+html[dir="rtl"] .ms-5 { margin-right: 3rem !important; margin-left: 0 !important; }
+
+html[dir="rtl"] .pe-1 { padding-left: 0.25rem !important; padding-right: 0 !important; }
+html[dir="rtl"] .pe-2 { padding-left: 0.5rem !important; padding-right: 0 !important; }
+html[dir="rtl"] .pe-3 { padding-left: 1rem !important; padding-right: 0 !important; }
+html[dir="rtl"] .pe-4 { padding-left: 1.5rem !important; padding-right: 0 !important; }
+html[dir="rtl"] .pe-5 { padding-left: 3rem !important; padding-right: 0 !important; }
+
+html[dir="rtl"] .ps-1 { padding-right: 0.25rem !important; padding-left: 0 !important; }
+html[dir="rtl"] .ps-2 { padding-right: 0.5rem !important; padding-left: 0 !important; }
+html[dir="rtl"] .ps-3 { padding-right: 1rem !important; padding-left: 0 !important; }
+html[dir="rtl"] .ps-4 { padding-right: 1.5rem !important; padding-left: 0 !important; }
+html[dir="rtl"] .ps-5 { padding-right: 3rem !important; padding-left: 0 !important; }
+
+html[dir="rtl"] .text-start { text-align: right !important; }
+html[dir="rtl"] .text-end { text-align: left !important; }
+
+html[dir="rtl"] .dropdown-menu {
+    text-align: right;
+    right: 0;
+    left: auto;
+}
+
+html[dir="rtl"] .dropdown-item {
     text-align: right;
 }
 
-/* Ensure proper alignment for toggles in RTL */
-html[dir="rtl"] #theme-toggle,
-html[dir="rtl"] #rtl-toggle {
-    margin-left: 0;
-    margin-right: 0.75rem;
+html[dir="rtl"] .dropdown-item:hover {
+    transform: translateX(-5px);
+}
+
+html[dir="rtl"] .navbar-brand {
+    margin-right: 0;
+    margin-left: 1rem;
 }

@@ -11,10 +11,7 @@
     <meta property="og:url" content="https://www.kineticsandstudio.com/index.html">
     <link rel="canonical" href="https://www.kineticsandstudio.com/index.html">
     <title>Kinetic Sand & Sensory Play Studio</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons CDN -->
@@ -26,25 +23,28 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <i class="bi bi-box-seam-fill me-2 text-primary"></i>
-                    <span class="fw-bold">Kinetic Studio</span>
+                    <span class="editorial-title">Kinetic Studio</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home 1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index2.html">Home 2</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">Home</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="index2.html">Home 2</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="experiences.html">Experiences</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="parties.html">Parties</a>
@@ -52,21 +52,27 @@
                         <li class="nav-item">
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="supportDropdown">
+                                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                <li><a class="dropdown-item" href="waiver.html">Waiver</a></li>
+                                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item ms-lg-3">
-                            <button class="btn btn-outline-secondary btn-sm" id="theme-toggle" aria-label="Toggle theme">
+                                                <li class="nav-item ms-lg-3">
+                            <button class="btn-toggle-tactile" id="theme-toggle" aria-label="Toggle theme">
                                 <i class="bi bi-moon-fill"></i>
                             </button>
                         </li>
                         <li class="nav-item ms-lg-2">
-                            <button class="btn btn-outline-secondary btn-sm" id="rtl-toggle" aria-label="Toggle RTL">
+                            <button class="btn-toggle-tactile text-btn" id="rtl-toggle" aria-label="Toggle RTL">
                                 RTL
                             </button>
                         </li>
                         <li class="nav-item ms-lg-3">
-                            <a href="login.html" class="btn btn-primary btn-sm px-4 rounded-pill">Login</a>
+                            <a href="login.html" class="btn-tactile px-4 py-2 me-2" style="font-size: 0.85rem;">Login</a>
+                            <a href="dashboard.html" class="btn-tactile px-4 py-2" style="font-size: 0.85rem; background-color: var(--color-terracotta);">Dashboard</a>
                         </li>
                     </ul>
                 </div>
@@ -76,66 +82,65 @@
 
     <main>
         <!-- 1. Immersive Hero Experience -->
-        <section id="hero" class="hero-section parallax-bg py-5">
-            <canvas id="hero-particles" class="hero-particles"></canvas>
-            <div class="container text-center py-5">
-                <h1 class="display-3 fw-bold mb-4">Welcome to Kinetic Sand & Sensory Play Studio</h1>
-                <p class="lead mb-4">Shape Imagination. Touch Creativity. Where Texture Becomes Play.</p>
-                <a href="parties.html" class="btn btn-primary btn-lg px-5 rounded-pill">Explore Experiences</a>
+        <section id="hero" class="hero-section py-5 d-flex align-items-center justify-content-center" style="min-height: calc(100vh - 80px); position: relative; overflow: hidden; background: url('assets/images/hero-macro-sand.png') center/cover no-repeat;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(251, 249, 246, 0.4); z-index: 1;"></div>
+            <canvas id="hero-particles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;"></canvas>
+            <div class="container text-center py-5 reveal-item" style="position: relative; z-index: 3;">
+                <h1 class="display-large editorial-title mb-4">Shape <br>Imagination.</h1>
+                <p class="lead mb-5 opacity-75">Touch Creativity. Where Texture Becomes Play.</p>
+                <a href="parties.html" class="btn-tactile">Explore Experiences</a>
             </div>
         </section>
 
         <!-- 2. About the Sensory Studio -->
-        <section id="about" class="about-section bg-light py-5">
+        <section id="about" class="section-padding">
             <div class="container">
                 <div class="row align-items-center g-5">
-                    <div class="col-md-6">
-                        <h2 class="display-5 fw-bold mb-4">About Our Studio</h2>
-                        <p class="lead text-muted">We are a premium sensory experience studio focused on creativity, tactile exploration, mindful play, and developmental learning.</p>
-                        <p>Our studio offers a unique environment where imagination takes shape through the magic of kinetic sand. Discover a space designed to engage all your senses, fostering a deeper connection with materials.</p>
-                        <a href="about.html" class="btn btn-outline-primary mt-3">Learn More About Us</a>
+                    <div class="col-md-6 reveal-item">
+                        <h2 class="display-medium editorial-title mb-4">About Our <br>Studio</h2>
+                        <p class="lead text-muted mb-4">We are a premium sensory experience studio focused on creativity, tactile exploration, mindful play, and developmental learning.</p>
+                        <p class="mb-4">Our studio offers a unique environment where imagination takes shape through the magic of kinetic sand. Discover a space designed to engage all your senses, fostering a deeper connection with materials.</p>
+                        <a href="about.html" class="btn-tactile">Learn More About Us</a>
                     </div>
-                    <div class="col-md-6">
-                        <img src="assets/images/about-studio.jpg" class="img-fluid rounded shadow" alt="About Kinetic Sand Studio">
+                    <div class="col-md-6 reveal-item">
+                        <div class="organic-shape shadow-lg">
+                            <img src="assets/images/about-studio.png" class="img-fluid" alt="About Kinetic Sand Studio">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 3. Sensory Experiences -->
-        <section id="experiences" class="experiences-section py-5">
-            <div class="container text-center">
-                <h2 class="display-5 fw-bold mb-4">Our Sensory Experiences</h2>
-                <p class="lead text-muted mb-5">Explore our range of immersive and tactile play experiences designed for all ages.</p>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                            <img src="assets/images/experience-1.jpg" class="card-img-top" alt="Creative Sand Lab">
-                            <div class="card-body p-4">
-                                <h5 class="card-title fw-bold">Creative Sand Lab</h5>
-                                <p class="card-text text-muted small">Unleash your inner artist in our guided sand sculpting sessions.</p>
-                                <a href="parties.html#creative-sand-lab" class="btn btn-link text-decoration-none p-0 fw-bold">Learn More <i class="bi bi-arrow-right"></i></a>
-                            </div>
+        <section id="experiences" class="section-padding bg-white">
+            <div class="container">
+                <div class="text-center mb-5 reveal-item">
+                    <h2 class="display-medium editorial-title mb-4">Sensory Experiences</h2>
+                    <p class="lead text-muted">Explore our range of immersive and tactile play experiences.</p>
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-4 reveal-item">
+                        <div class="tactile-card h-100">
+                            <img src="assets/images/experience-1.png" class="img-fluid rounded-4 mb-4" alt="Creative Sand Lab">
+                            <h5 class="fw-bold mb-3">Creative Sand Lab</h5>
+                            <p class="text-muted small">Unleash your inner artist in our guided sand sculpting sessions.</p>
+                            <a href="parties.html#creative-sand-lab" class="btn btn-link text-decoration-none p-0 fw-bold text-charcoal">Learn More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                            <img src="assets/images/experience-2.jpg" class="card-img-top" alt="Texture Discovery Zone">
-                            <div class="card-body p-4">
-                                <h5 class="card-title fw-bold">Texture Discovery Zone</h5>
-                                <p class="card-text text-muted small">Explore various textures and materials in a free-play environment.</p>
-                                <a href="parties.html#texture-discovery-zone" class="btn btn-link text-decoration-none p-0 fw-bold">Learn More <i class="bi bi-arrow-right"></i></a>
-                            </div>
+                    <div class="col-md-4 reveal-item" style="transition-delay: 0.1s;">
+                        <div class="tactile-card h-100">
+                            <img src="assets/images/experience-2.jpg" class="img-fluid rounded-4 mb-4" alt="Texture Discovery Zone">
+                            <h5 class="fw-bold mb-3">Texture Discovery Zone</h5>
+                            <p class="text-muted small">Explore various textures and materials in a free-play environment.</p>
+                            <a href="parties.html#texture-discovery-zone" class="btn btn-link text-decoration-none p-0 fw-bold text-charcoal">Learn More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                            <img src="assets/images/experience-3.jpg" class="card-img-top" alt="Calm Play Sessions">
-                            <div class="card-body p-4">
-                                <h5 class="card-title fw-bold">Calm Play Sessions</h5>
-                                <p class="card-text text-muted small">Relax and unwind with therapeutic kinetic sand play.</p>
-                                <a href="parties.html" class="btn btn-link text-decoration-none p-0 fw-bold">Learn More <i class="bi bi-arrow-right"></i></a>
-                            </div>
+                    <div class="col-md-4 reveal-item" style="transition-delay: 0.2s;">
+                        <div class="tactile-card h-100">
+                            <img src="assets/images/experience-3.jpg" class="img-fluid rounded-4 mb-4" alt="Calm Play Sessions">
+                            <h5 class="fw-bold mb-3">Calm Play Sessions</h5>
+                            <p class="text-muted small">Relax and unwind with therapeutic kinetic sand play.</p>
+                            <a href="parties.html" class="btn btn-link text-decoration-none p-0 fw-bold text-charcoal">Learn More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -143,43 +148,45 @@
         </section>
 
         <!-- 4. Birthday Experiences -->
-        <section id="birthday" class="birthday-section bg-primary text-white py-5">
-            <div class="container text-center py-4">
-                <h2 class="display-5 fw-bold mb-4">Unforgettable Birthdays</h2>
-                <p class="lead mb-5">Celebrate your special day with a unique and memorable sensory party!</p>
-                <a href="parties.html" class="btn btn-light btn-lg px-5 rounded-pill fw-bold">Plan Your Party</a>
+        <section id="birthday" class="section-padding" style="background-color: var(--color-sand);">
+            <div class="container text-center py-5 reveal-item">
+                <h2 class="display-medium editorial-title mb-4">Unforgettable <br>Birthdays</h2>
+                <p class="lead mb-5 opacity-75">Celebrate your special day with a unique and memorable sensory party!</p>
+                <a href="parties.html" class="btn-tactile">Plan Your Party</a>
             </div>
         </section>
 
         <!-- 5. Educational Benefits -->
-        <section id="benefits" class="benefits-section py-5">
+        <section id="benefits" class="section-padding bg-white">
             <div class="container">
-                <h2 class="text-center display-5 fw-bold mb-5">Educational Benefits</h2>
-                <div class="row g-4 text-center">
-                    <div class="col-md-3">
-                        <div class="p-4 rounded-4 bg-light h-100">
-                            <i class="bi bi-hand-index-thumb text-primary display-4 mb-3 d-block"></i>
+                <div class="text-center mb-5 reveal-item">
+                    <h2 class="display-medium editorial-title mb-4">Educational Benefits</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-3 reveal-item">
+                        <div class="tactile-card h-100 text-center">
+                            <i class="bi bi-hand-index-thumb text-terracotta display-4 mb-3 d-block"></i>
                             <h4 class="fw-bold">Fine Motor</h4>
                             <p class="text-muted small mb-0">Enhance dexterity and coordination through manipulation.</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="p-4 rounded-4 bg-light h-100">
-                            <i class="bi bi-emoji-smile text-primary display-4 mb-3 d-block"></i>
+                    <div class="col-md-3 reveal-item" style="transition-delay: 0.1s;">
+                        <div class="tactile-card h-100 text-center">
+                            <i class="bi bi-emoji-smile text-terracotta display-4 mb-3 d-block"></i>
                             <h4 class="fw-bold">Regulation</h4>
                             <p class="text-muted small mb-0">Promote calm and focus with soothing tactile input.</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="p-4 rounded-4 bg-light h-100">
-                            <i class="bi bi-lightbulb text-primary display-4 mb-3 d-block"></i>
+                    <div class="col-md-3 reveal-item" style="transition-delay: 0.2s;">
+                        <div class="tactile-card h-100 text-center">
+                            <i class="bi bi-lightbulb text-terracotta display-4 mb-3 d-block"></i>
                             <h4 class="fw-bold">Creativity</h4>
                             <p class="text-muted small mb-0">Inspire open-ended play and imaginative construction.</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="p-4 rounded-4 bg-light h-100">
-                            <i class="bi bi-book text-primary display-4 mb-3 d-block"></i>
+                    <div class="col-md-3 reveal-item" style="transition-delay: 0.3s;">
+                        <div class="tactile-card h-100 text-center">
+                            <i class="bi bi-book text-terracotta display-4 mb-3 d-block"></i>
                             <h4 class="fw-bold">Learning</h4>
                             <p class="text-muted small mb-0">Engage multiple senses for holistic development.</p>
                         </div>
@@ -187,56 +194,97 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer class="bg-dark text-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5 class="fw-bold mb-3">Kinetic Studio</h5>
-                    <p class="text-muted">Shape Imagination. Touch Creativity. Where Texture Becomes Play.</p>
-                    <div class="social-links mt-3">
-                        <a href="#" class="text-light me-3 text-decoration-none"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-light me-3 text-decoration-none"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-light me-3 text-decoration-none"><i class="bi bi-youtube"></i></a>
+        <!-- 6. Pure Play Promise -->
+        <section id="hygiene" class="section-padding" style="background-color: var(--color-off-white);">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-md-6 order-md-2 reveal-item">
+                        <h2 class="display-medium editorial-title mb-4">Pure Play <br>Promise</h2>
+                        <p class="lead text-muted mb-4">Your safety and hygiene are at the heart of our sensory experience.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-4 d-flex align-items-start">
+                                <div class="icon-shape bg-sand me-3 mt-1"><i class="bi bi-shield-check text-terracotta"></i></div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Sanitized Sand</h5>
+                                    <p class="small text-muted mb-0">Our kinetic sand is treated with safe, antimicrobial properties and cycled regularly.</p>
+                                </div>
+                            </li>
+                            <li class="mb-4 d-flex align-items-start">
+                                <div class="icon-shape bg-sand me-3 mt-1"><i class="bi bi-water text-terracotta"></i></div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Fresh Air Flow</h5>
+                                    <p class="small text-muted mb-0">Advanced HEPA filtration ensures the studio remains a clean, breathable sanctuary.</p>
+                                </div>
+                            </li>
+                            <li class="mb-4 d-flex align-items-start">
+                                <div class="icon-shape bg-sand me-3 mt-1"><i class="bi bi-sparkles text-terracotta"></i></div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Daily Deep Clean</h5>
+                                    <p class="small text-muted mb-0">Every tool and surface is meticulously sanitized between every single session.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 order-md-1 reveal-item">
+                        <div class="tactile-card p-0 overflow-hidden shadow-lg" style="border: none; border-radius: 3rem;">
+                            <img src="assets/images/hygiene-studio.jpg" class="img-fluid" alt="Clean Sensory Studio" style="filter: contrast(1.05) brightness(1.02);">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
-                    <h6 class="fw-bold mb-3">Quick Links</h6>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="section-padding" style="background-color: var(--color-charcoal); color: var(--color-off-white);">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h5 class="editorial-title mb-4" style="color: var(--color-off-white);">Kinetic Studio</h5>
+                    <p class="opacity-75 small">Shape Imagination. Touch Creativity. Where Texture Becomes Play.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-off-white me-4 opacity-50 hover-opacity-100 transition-smooth"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-off-white me-4 opacity-50 hover-opacity-100 transition-smooth"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-off-white opacity-50 hover-opacity-100 transition-smooth"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-4 opacity-50 text-uppercase small letter-spacing-lg">Quick Links</h6>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-muted text-decoration-none small">Home</a></li>
-                        <li><a href="about.html" class="text-muted text-decoration-none small">About Us</a></li>
-                        <li><a href="parties.html" class="text-muted text-decoration-none small">Parties</a></li>
-                        <li><a href="gallery.html" class="text-muted text-decoration-none small">Gallery</a></li>
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">About Us</a></li>
+                        <li class="mb-2"><a href="parties.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Parties</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Gallery</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
-                    <h6 class="fw-bold mb-3">Support</h6>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-4 opacity-50 text-uppercase small letter-spacing-lg">Support</h6>
                     <ul class="list-unstyled">
-                        <li><a href="contact.html" class="text-muted text-decoration-none small">Contact Us</a></li>
-                        <li><a href="contact.html#faq-section" class="text-muted text-decoration-none small">FAQs</a></li>
-                        <li><a href="waiver.html" class="text-muted text-decoration-none small">Waiver</a></li>
-                        <li><a href="contact.html#booking-hero" class="text-muted text-decoration-none small">Booking</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Contact Us</a></li>
+                        <li class="mb-2"><a href="contact.html#faq-section" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">FAQs</a></li>
+                        <li class="mb-2"><a href="waiver.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Waiver</a></li>
+                        <li class="mb-2"><a href="contact.html#booking-hero" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Booking</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <h6 class="fw-bold mb-3">Contact Info</h6>
-                    <ul class="list-unstyled text-muted small">
-                        <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> 123 Sensory Lane, Creativity City</li>
-                        <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i> (123) 456-7890</li>
-                        <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i> info@kineticsandstudio.com</li>
+                    <h6 class="fw-bold mb-4 opacity-50 text-uppercase small letter-spacing-lg">Contact Info</h6>
+                    <ul class="list-unstyled opacity-75 small">
+                        <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-terracotta"></i> 123 Sensory Lane, Creativity City</li>
+                        <li class="mb-3"><i class="bi bi-telephone-fill me-2 text-terracotta"></i> (123) 456-7890</li>
+                        <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-terracotta"></i> info@kineticsandstudio.com</li>
                     </ul>
                 </div>
             </div>
-            <hr class="my-4 border-secondary">
-            <div class="row align-items-center">
+            <hr class="my-5 opacity-10">
+            <div class="row align-items-center opacity-50 small">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0 text-muted small">&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a href="#" class="text-muted text-decoration-none small">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="#" class="text-muted text-decoration-none small">Terms of Service</a></li>
+                        <li class="list-inline-item me-4"><a href="#" class="text-decoration-none" style="color: var(--color-off-white);">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none" style="color: var(--color-off-white);">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
@@ -247,3 +295,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

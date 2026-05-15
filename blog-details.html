@@ -15,29 +15,31 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap 5 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
 <body>
-    <!-- Header will go here -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Studio Logo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <span class="editorial-title">Kinetic Studio</span>
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="index2.html">Home 2</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
@@ -46,29 +48,32 @@
                             <a class="nav-link" href="experiences.html">Experiences</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="birthday-parties.html">Birthday Parties</a>
+                            <a class="nav-link" href="parties.html">Parties</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="booking.html">Booking</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="supportDropdown">
+                                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                <li><a class="dropdown-item" href="waiver.html">Waiver</a></li>
+                                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="faq.html">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link nav-link" id="theme-toggle" aria-label="Toggle theme">
-                                <i class="bi bi-moon-fill"></i> <!-- Placeholder for moon icon -->
+                                                <li class="nav-item ms-lg-3">
+                            <button class="btn-toggle-tactile" id="theme-toggle" aria-label="Toggle theme">
+                                <i class="bi bi-moon-fill"></i>
                             </button>
                         </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link nav-link" id="rtl-toggle" aria-label="Toggle RTL direction">
+                        <li class="nav-item ms-lg-2">
+                            <button class="btn-toggle-tactile text-btn" id="rtl-toggle" aria-label="Toggle RTL">
                                 RTL
                             </button>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="login.html" class="btn-tactile px-4 py-2 me-2" style="font-size: 0.85rem;">Login</a>
+                            <a href="dashboard.html" class="btn-tactile px-4 py-2" style="font-size: 0.85rem; background-color: var(--color-terracotta);">Dashboard</a>
                         </li>
                     </ul>
                 </div>
@@ -199,9 +204,8 @@
         </section>
     </main>
 
-    <!-- Footer will go here -->
-    <footer>
-        <div class="container">
+    <footer class="section-padding" style="background-color: var(--color-charcoal); color: var(--color-off-white);">
+        <div class="container text-center opacity-50 small">
             <p>&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
         </div>
     </footer>

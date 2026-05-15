@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your sensory experiences and bookings at Kinetic Sand & Sensory Play Studio.">
+    <meta name="keywords" content="dashboard, sensory bookings, my account, kinetic studio profile">
+    <meta property="og:title" content="User Dashboard | Kinetic Sand & Sensory Play Studio">
+    <meta property="og:description" content="Manage your sensory experiences and bookings at Kinetic Sand & Sensory Play Studio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kineticsandstudio.com/dashboard.html">
+    <link rel="canonical" href="https://www.kineticsandstudio.com/dashboard.html">
+    <title>Dashboard - Kinetic Sand & Sensory Play Studio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .dashboard-stat {
+            background: rgba(251, 249, 246, 0.5);
+            border-radius: 2rem;
+            padding: 2rem;
+            border: 1px solid rgba(var(--color-charcoal-rgb), 0.03);
+            transition: var(--transition-physical);
+        }
+        .dashboard-stat:hover {
+            transform: translateY(-5px);
+            background: var(--color-off-white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <span class="editorial-title">Kinetic Studio</span>
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="index2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="experiences.html">Experiences</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="parties.html">Parties</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="supportDropdown">
+                                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                <li><a class="dropdown-item" href="waiver.html">Waiver</a></li>
+                                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </li>
+                                                <li class="nav-item ms-lg-3">
+                            <button class="btn-toggle-tactile" id="theme-toggle" aria-label="Toggle theme">
+                                <i class="bi bi-moon-fill"></i>
+                            </button>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <button class="btn-toggle-tactile text-btn" id="rtl-toggle" aria-label="Toggle RTL">
+                                RTL
+                            </button>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="login.html" class="btn-tactile px-4 py-2 me-2" style="font-size: 0.85rem;">Login</a>
+                            <a href="dashboard.html" class="btn-tactile px-4 py-2" style="font-size: 0.85rem; background-color: var(--color-terracotta);">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <!-- Sidebar / Profile -->
+                <div class="col-lg-4 reveal-item">
+                    <div class="tactile-card h-100 text-center p-5">
+                        <div class="organic-shape mx-auto mb-4 shadow-sm" style="width: 120px; height: 120px; background-color: var(--color-sand);">
+                            <img src="https://ui-avatars.com/api/?name=Guest+User&background=D4C1A5&color=36454F&size=128" class="img-fluid" alt="User Profile">
+                        </div>
+                        <h2 class="editorial-title h4 mb-2">Welcome Back.</h2>
+                        <p class="text-muted small mb-4">Guest Explorer</p>
+                        <hr class="my-4 opacity-10">
+                        <ul class="list-unstyled text-start mb-0">
+                            <li class="mb-3"><a href="#" class="text-decoration-none text-charcoal fw-bold"><i class="bi bi-person me-3 opacity-50"></i> My Profile</a></li>
+                            <li class="mb-3"><a href="#" class="text-decoration-none text-charcoal opacity-75 hover-opacity-100"><i class="bi bi-calendar-event me-3 opacity-50"></i> My Bookings</a></li>
+                            <li class="mb-3"><a href="#" class="text-decoration-none text-charcoal opacity-75 hover-opacity-100"><i class="bi bi-file-earmark-check me-3 opacity-50"></i> Signed Waivers</a></li>
+                            <li class="mb-3"><a href="#" class="text-decoration-none text-charcoal opacity-75 hover-opacity-100"><i class="bi bi-gear me-3 opacity-50"></i> Settings</a></li>
+                            <li class="mt-5"><a href="index.html" class="text-decoration-none text-terracotta fw-bold"><i class="bi bi-box-arrow-right me-3"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Dashboard Content -->
+                <div class="col-lg-8">
+                    <div class="row g-4 mb-5 reveal-item">
+                        <div class="col-md-6">
+                            <div class="dashboard-stat h-100">
+                                <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-3">Next Session</h6>
+                                <h4 class="editorial-title mb-0">Creative Sand Lab</h4>
+                                <p class="text-muted small mt-2">May 24, 2026 at 2:00 PM</p>
+                                <a href="#" class="btn btn-link text-terracotta p-0 text-decoration-none small fw-bold mt-3">Reschedule <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="dashboard-stat h-100">
+                                <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-3">Loyalty Points</h6>
+                                <h4 class="editorial-title mb-0">1,250 XP</h4>
+                                <p class="text-muted small mt-2">250 points until your next reward.</p>
+                                <a href="#" class="btn btn-link text-charcoal p-0 text-decoration-none small fw-bold mt-3">View Rewards <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal-item" style="transition-delay: 0.1s;">
+                        <h3 class="editorial-title h4 mb-4">Recent Bookings</h3>
+                        <div class="tactile-card p-4">
+                            <div class="table-responsive">
+                                <table class="table table-borderless align-middle mb-0">
+                                    <thead>
+                                        <tr class="small opacity-50 border-bottom">
+                                            <th class="pb-3 fw-normal">Experience</th>
+                                            <th class="pb-3 fw-normal">Date</th>
+                                            <th class="pb-3 fw-normal">Status</th>
+                                            <th class="pb-3 fw-normal text-end">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-3 fw-bold">Texture Discovery Zone</td>
+                                            <td class="py-3 text-muted">May 10, 2026</td>
+                                            <td class="py-3"><span class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span></td>
+                                            <td class="py-3 text-end"><a href="#" class="btn btn-link text-charcoal p-0"><i class="bi bi-download"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 fw-bold">Glow Sensory Room</td>
+                                            <td class="py-3 text-muted">April 15, 2026</td>
+                                            <td class="py-3"><span class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span></td>
+                                            <td class="py-3 text-end"><a href="#" class="btn btn-link text-charcoal p-0"><i class="bi bi-download"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 reveal-item" style="transition-delay: 0.2s;">
+                        <div class="tactile-card p-5" style="background-color: var(--color-peach); border: none;">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <h4 class="editorial-title mb-2">Book a New Experience</h4>
+                                    <p class="text-muted small mb-0">Discover new textures and workshops tailored for you.</p>
+                                </div>
+                                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                    <a href="experiences.html" class="btn-tactile px-4">Browse All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="section-padding" style="background-color: var(--color-charcoal); color: var(--color-off-white);">
+        <div class="container text-center opacity-50 small">
+            <p>&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

@@ -15,7 +15,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons CDN -->
@@ -26,43 +26,57 @@
     <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
 <body>
-    <!-- Header will go here -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Studio Logo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <span class="editorial-title">Kinetic Studio</span>
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="index2.html">Home 2</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="experiences.html">Experiences</a>
+                            <a class="nav-link active" href="experiences.html" aria-current="page">Experiences</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="birthday-parties.html">Birthday Parties</a>
+                            <a class="nav-link" href="parties.html">Parties</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact & FAQ</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="supportDropdown">
+                                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                <li><a class="dropdown-item" href="waiver.html">Waiver</a></li>
+                                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link nav-link" id="theme-toggle" aria-label="Toggle theme">
-                                <i class="bi bi-moon-fill"></i> <!-- Placeholder for moon icon -->
+                                                <li class="nav-item ms-lg-3">
+                            <button class="btn-toggle-tactile" id="theme-toggle" aria-label="Toggle theme">
+                                <i class="bi bi-moon-fill"></i>
                             </button>
                         </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link nav-link" id="rtl-toggle" aria-label="Toggle RTL direction">
+                        <li class="nav-item ms-lg-2">
+                            <button class="btn-toggle-tactile text-btn" id="rtl-toggle" aria-label="Toggle RTL">
                                 RTL
                             </button>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="login.html" class="btn-tactile px-4 py-2 me-2" style="font-size: 0.85rem;">Login</a>
+                            <a href="dashboard.html" class="btn-tactile px-4 py-2" style="font-size: 0.85rem; background-color: var(--color-terracotta);">Dashboard</a>
                         </li>
                     </ul>
                 </div>
@@ -204,10 +218,57 @@
         </section>
     </main>
 
-    <!-- Footer will go here -->
-    <footer>
+    <footer class="section-padding" style="background-color: var(--color-charcoal); color: var(--color-off-white);">
         <div class="container">
-            <p>&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h5 class="editorial-title mb-4" style="color: var(--color-off-white);">Kinetic Studio</h5>
+                    <p class="opacity-75 small">Shape Imagination. Touch Creativity. Where Texture Becomes Play.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-off-white me-4 opacity-50 hover-opacity-100 transition-smooth"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-off-white me-4 opacity-50 hover-opacity-100 transition-smooth"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-off-white opacity-50 hover-opacity-100 transition-smooth"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-4 opacity-50 text-uppercase small letter-spacing-lg">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">About Us</a></li>
+                        <li class="mb-2"><a href="parties.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Parties</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-4 opacity-50 text-uppercase small letter-spacing-lg">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Contact Us</a></li>
+                        <li class="mb-2"><a href="contact.html#faq-section" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">FAQs</a></li>
+                        <li class="mb-2"><a href="waiver.html" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Waiver</a></li>
+                        <li class="mb-2"><a href="contact.html#booking-hero" class="text-decoration-none opacity-75 hover-opacity-100" style="color: var(--color-off-white);">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h6 class="fw-bold mb-4 opacity-50 text-uppercase small letter-spacing-lg">Contact Info</h6>
+                    <ul class="list-unstyled opacity-75 small">
+                        <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-terracotta"></i> 123 Sensory Lane, Creativity City</li>
+                        <li class="mb-3"><i class="bi bi-telephone-fill me-2 text-terracotta"></i> (123) 456-7890</li>
+                        <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-terracotta"></i> info@kineticsandstudio.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-5 opacity-10">
+            <div class="row align-items-center opacity-50 small">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item me-4"><a href="#" class="text-decoration-none" style="color: var(--color-off-white);">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none" style="color: var(--color-off-white);">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 

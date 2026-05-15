@@ -1,101 +1,102 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inject Grain Overlay & Smooth Scroll Container
+    const grain = document.createElement('div');
+    grain.className = 'grain-overlay';
+    document.body.appendChild(grain);
+
+    // 2. State Management
     const themeToggle = document.getElementById('theme-toggle');
     const rtlToggle = document.getElementById('rtl-toggle');
-    const htmlElement = document.documentElement;
-    const bodyElement = document.body;
+    const navbar = document.querySelector('.navbar');
+    
+    // Initial State Application
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    const currentDir = localStorage.getItem('dir') || 'ltr';
 
-    // Initialize theme from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        bodyElement.classList.add('dark-mode');
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+    
+    if (currentDir === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
     }
 
-    // Initialize RTL from localStorage
-    const savedRTL = localStorage.getItem('rtl');
-    if (savedRTL === 'true') {
-        htmlElement.setAttribute('dir', 'rtl');
-    } else {
-        htmlElement.setAttribute('dir', 'ltr');
-    }
+    // Theme logic
+    const updateThemeIcon = (isDark) => {
+        const icon = themeToggle?.querySelector('i');
+        if (icon) {
+            icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+        }
+    };
 
-    // Theme toggle functionality
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            bodyElement.classList.toggle('dark-mode');
-            if (bodyElement.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    }
+    // Apply initial icon
+    updateThemeIcon(currentTheme === 'dark');
+    
+    themeToggle?.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateThemeIcon(isDark);
+    });
 
-    // RTL toggle functionality
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
-            if (htmlElement.getAttribute('dir') === 'rtl') {
-                htmlElement.setAttribute('dir', 'ltr');
-                localStorage.setItem('rtl', 'false');
-            } else {
-                htmlElement.setAttribute('dir', 'rtl');
-                localStorage.setItem('rtl', 'true');
-            }
-        });
-    }
+    // RTL logic
+    rtlToggle?.addEventListener('click', () => {
+        const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+        const newDir = isRTL ? 'ltr' : 'rtl';
+        document.documentElement.setAttribute('dir', newDir);
+        localStorage.setItem('dir', newDir);
+    });
 
-    // Parallax effect for elements with .parallax-bg
-    const parallaxElements = document.querySelectorAll('.parallax-bg');
-    let tickingParallax = false;
+    // 3. Navbar Scroll State
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar?.classList.add('scrolled');
+        } else {
+            navbar?.classList.remove('scrolled');
+        }
+    });
 
-    function applyParallax() {
-        parallaxElements.forEach(element => {
-            const speed = 0.5; // Adjust parallax speed
-            const yPos = -(window.scrollY * speed);
-            element.style.backgroundPositionY = `${yPos}px`;
-        });
-        tickingParallax = false;
-    }
-
-    if (parallaxElements.length > 0) {
-        window.addEventListener('scroll', () => {
-            if (!tickingParallax) {
-                window.requestAnimationFrame(applyParallax);
-                tickingParallax = true;
-            }
-        });
-        window.addEventListener('resize', () => {
-            if (!tickingParallax) {
-                window.requestAnimationFrame(applyParallax);
-                tickingParallax = true;
-            }
-        });
-        applyParallax(); // Apply on load
-    }
-
-    // Floating Particles Effect
-    class Particle {
+    // 4. Digital Sand Physics (Canvas)
+    class SandParticle {
         constructor(canvas) {
             this.canvas = canvas;
             this.ctx = canvas.getContext('2d');
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 5 + 1;
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
-            this.color = 'rgba(255, 255, 255, 0.8)'; // White particles
+            this.reset();
         }
 
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
+        reset() {
+            this.x = Math.random() * this.canvas.width;
+            this.y = Math.random() * this.canvas.height;
+            this.size = Math.random() * 2 + 1;
+            this.baseX = this.x;
+            this.baseY = this.y;
+            this.density = (Math.random() * 30) + 1;
+            this.color = document.body.classList.contains('dark-mode') ? '#B8A79B' : '#D4C1A5';
+        }
 
-            if (this.size > 0.2) this.size -= 0.01;
+        update(mouse) {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            let forceDirectionX = dx / distance;
+            let forceDirectionY = dy / distance;
+            let maxDistance = 150;
+            let force = (maxDistance - distance) / maxDistance;
+            let directionX = forceDirectionX * force * this.density;
+            let directionY = forceDirectionY * force * this.density;
 
-            if (this.x > this.canvas.width || this.x < 0) {
-                this.speedX *= -1;
-            }
-            if (this.y > this.canvas.height || this.y < 0) {
-                this.speedY *= -1;
+            if (distance < maxDistance) {
+                this.x -= directionX;
+                this.y -= directionY;
+            } else {
+                if (this.x !== this.baseX) {
+                    let dx = this.x - this.baseX;
+                    this.x -= dx / 20;
+                }
+                if (this.y !== this.baseY) {
+                    let dy = this.y - this.baseY;
+                    this.y -= dy / 20;
+                }
             }
         }
 
@@ -103,68 +104,64 @@ document.addEventListener('DOMContentLoaded', () => {
             this.ctx.fillStyle = this.color;
             this.ctx.beginPath();
             this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            this.ctx.closePath();
             this.ctx.fill();
         }
     }
 
-    function initParticles(canvasId) {
+    const initSandEffect = (canvasId) => {
         const canvas = document.getElementById(canvasId);
         if (!canvas) return;
-
         const ctx = canvas.getContext('2d');
-        canvas.width = canvas.parentElement.clientWidth;
-        canvas.height = canvas.parentElement.clientHeight;
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 150 };
 
-        let particlesArray = [];
-        const numberOfParticles = 100;
-
-        for (let i = 0; i < numberOfParticles; i++) {
-            particlesArray.push(new Particle(canvas));
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            requestAnimationFrame(animateParticles);
-        }
-
-        window.addEventListener('resize', () => {
+        const resize = () => {
             canvas.width = canvas.parentElement.clientWidth;
             canvas.height = canvas.parentElement.clientHeight;
-            particlesArray = []; // Reinitialize particles on resize
-            for (let i = 0; i < numberOfParticles; i++) {
-                particlesArray.push(new Particle(canvas));
+            particles = [];
+            for (let i = 0; i < 150; i++) {
+                particles.push(new SandParticle(canvas));
             }
+        };
+
+        window.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
         });
 
-        animateParticles();
-    }
+        const animate = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update(mouse);
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        };
 
-    initParticles('hero-particles');
-    initParticles('hero-particles-2');
-
-    // Smooth Reveal Animations on Scroll
-    const revealElements = document.querySelectorAll('.reveal-item');
-
-    const observerOptions = {
-        root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0.1 // 10% of the item needs to be visible
+        resize();
+        animate();
+        window.addEventListener('resize', resize);
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    initSandEffect('hero-particles');
+
+    // 5. Reveal Animations
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
-                observer.unobserve(entry.target); // Stop observing once animated
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    revealElements.forEach(element => {
-        observer.observe(element);
+    document.querySelectorAll('.reveal-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+        observer.observe(el);
     });
 });
