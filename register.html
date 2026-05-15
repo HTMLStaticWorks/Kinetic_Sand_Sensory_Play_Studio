@@ -26,7 +26,7 @@
     <main class="d-flex align-items-center justify-content-center min-vh-100 py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-5 col-xl-4 reveal-item">
+                <div class="col-md-8 col-lg-6 col-xl-4 reveal-item">
                     <div class="tactile-card p-4 p-sm-5 text-center position-relative">
                         <!-- Logo -->
                         <div class="mb-4">
@@ -55,10 +55,29 @@
                                 <label class="form-label small opacity-75 fw-bold">Password</label>
                                 <div class="input-group">
                                     <input type="password" id="register-password" class="form-control px-3 py-2" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-right: none; border-radius: 0.8rem 0 0 0.8rem;" required>
-                                    <button class="btn px-3" type="button" id="toggle-password" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-left: none; border-radius: 0 0.8rem 0.8rem 0;">
-                                        <i class="bi bi-eye-slash text-muted" id="toggle-icon"></i>
+                                    <button class="btn px-3 toggle-password-btn" type="button" data-target="register-password" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-left: none; border-radius: 0 0.8rem 0.8rem 0;">
+                                        <i class="bi bi-eye-slash text-muted"></i>
                                     </button>
                                 </div>
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="mb-3 text-start">
+                                <label class="form-label small opacity-75 fw-bold">Confirm Password</label>
+                                <div class="input-group">
+                                    <input type="password" id="confirm-password" class="form-control px-3 py-2" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-right: none; border-radius: 0.8rem 0 0 0.8rem;" required>
+                                    <button class="btn px-3 toggle-password-btn" type="button" data-target="confirm-password" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-left: none; border-radius: 0 0.8rem 0.8rem 0;">
+                                        <i class="bi bi-eye-slash text-muted"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="mb-3 text-start d-flex align-items-center gap-2">
+                                <input type="checkbox" id="terms" class="form-check-input mt-0" required style="cursor: pointer; width: 1.1rem; height: 1.1rem; border-radius: 4px; border: 1px solid rgba(var(--color-charcoal-rgb), 0.2);">
+                                <label for="terms" class="small text-muted mb-0" style="cursor: pointer;">
+                                    I agree to the <a href="#" class="terms-link fw-bold text-decoration-none">Terms and Conditions</a>
+                                </label>
                             </div>
 
                             <!-- Register Button -->
@@ -92,19 +111,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        // Password Visibility Toggle
-        document.getElementById('toggle-password').addEventListener('click', function (e) {
-            const passwordInput = document.getElementById('register-password');
-            const toggleIcon = document.getElementById('toggle-icon');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                toggleIcon.classList.remove('bi-eye-slash');
-                toggleIcon.classList.add('bi-eye');
-            } else {
-                passwordInput.type = 'password';
-                toggleIcon.classList.remove('bi-eye');
-                toggleIcon.classList.add('bi-eye-slash');
-            }
+        // Password Visibility Toggles
+        document.querySelectorAll('.toggle-password-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const passwordInput = document.getElementById(targetId);
+                const toggleIcon = this.querySelector('i');
+                
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    toggleIcon.classList.replace('bi-eye-slash', 'bi-eye');
+                } else {
+                    passwordInput.type = 'password';
+                    toggleIcon.classList.replace('bi-eye', 'bi-eye-slash');
+                }
+            });
         });
     </script>
 </body>

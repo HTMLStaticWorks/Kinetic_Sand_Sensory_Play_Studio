@@ -130,19 +130,23 @@
                     <div id="profile" class="tab-content-panel" style="display: block;">
                         <div class="row g-4 mb-5 reveal-item">
                         <div class="col-md-6">
-                            <div class="dashboard-stat h-100">
+                            <div class="dashboard-stat h-100 d-flex flex-column">
                                 <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-3">Next Session</h6>
                                 <h4 class="editorial-title mb-0">Creative Sand Lab</h4>
                                 <p class="text-muted small mt-2">May 24, 2026 at 2:00 PM</p>
-                                <a href="#" class="btn btn-link text-terracotta p-0 text-decoration-none small fw-bold mt-3">Reschedule <i class="bi bi-arrow-right"></i></a>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-link text-terracotta p-0 text-decoration-none small fw-bold">Reschedule <i class="bi bi-arrow-right"></i></a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="dashboard-stat h-100">
+                            <div class="dashboard-stat h-100 d-flex flex-column">
                                 <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-3">Loyalty Points</h6>
                                 <h4 class="editorial-title mb-0">1,250 XP</h4>
                                 <p class="text-muted small mt-2">250 points until your next reward.</p>
-                                <a href="#" class="btn btn-link text-charcoal p-0 text-decoration-none small fw-bold mt-3">View Rewards <i class="bi bi-arrow-right"></i></a>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-link text-charcoal p-0 text-decoration-none small fw-bold">View Rewards <i class="bi bi-arrow-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -180,7 +184,7 @@
                     </div>
 
                     <div class="mt-5 reveal-item" style="transition-delay: 0.2s;">
-                        <div class="tactile-card p-5" style="background-color: var(--color-peach); border: none;">
+                        <div class="tactile-card p-5 card-peach" style="background-color: var(--color-peach); border: none;">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
                                     <h4 class="editorial-title mb-2">Book a New Experience</h4>
@@ -331,7 +335,7 @@
                         </div>
                         <div class="tactile-card p-4 text-center">
                             <h6 class="mb-4 text-start">Activity Graph</h6>
-                            <div class="d-flex align-items-end justify-content-between pt-4 px-3" style="height: 200px; border-bottom: 2px solid rgba(0,0,0,0.05); gap: 10px;">
+                            <div class="d-flex align-items-end justify-content-between pt-4 px-3" style="height: 200px; border-bottom: 2px solid rgba(0,0,0,0.05); gap: 10px; flex-direction: row !important;">
                                 <div class="bg-primary opacity-50 rounded-top w-100" style="height: 30%; transition: 0.3s;" title="Jan"></div>
                                 <div class="bg-primary opacity-50 rounded-top w-100" style="height: 50%; transition: 0.3s;" title="Feb"></div>
                                 <div class="bg-primary opacity-50 rounded-top w-100" style="height: 40%; transition: 0.3s;" title="Mar"></div>
@@ -339,7 +343,7 @@
                                 <div class="bg-primary rounded-top w-100" style="height: 65%; transition: 0.3s; background-color: var(--color-terracotta) !important;" title="May"></div>
                                 <div class="bg-primary opacity-25 rounded-top w-100" style="height: 20%; transition: 0.3s;" title="Jun"></div>
                             </div>
-                            <div class="d-flex justify-content-between mt-2 small text-muted px-3">
+                            <div class="d-flex justify-content-between mt-2 small text-muted px-3" style="flex-direction: row !important;">
                                 <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span class="fw-bold" style="color: var(--color-terracotta);">May</span><span>Jun</span>
                             </div>
                         </div>

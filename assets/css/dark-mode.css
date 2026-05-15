@@ -12,13 +12,32 @@ body.dark-mode {
 .dark-mode h5,
 .dark-mode h6,
 .dark-mode .editorial-title,
-.dark-mode .navbar-brand,
-.dark-mode .navbar-brand img {
+.dark-mode .navbar-brand {
     color: var(--color-charcoal) !important;
 }
 
+/* Ensure headings on dark backgrounds remain light in dark mode */
+.dark-mode [style*="background-color: #1A1A1A"] h1,
+.dark-mode [style*="background-color: #1A1A1A"] h2,
+.dark-mode [style*="background-color: #1A1A1A"] h3,
+.dark-mode [style*="background-color: #1A1A1A"] .editorial-title {
+    color: #FBF9F6 !important;
+}
+
+/* Peach Card Visibility in Dark Mode */
+.dark-mode .card-peach,
+.dark-mode .card-peach h1,
+.dark-mode .card-peach h2,
+.dark-mode .card-peach h3,
+.dark-mode .card-peach h4,
+.dark-mode .card-peach .editorial-title,
+.dark-mode .card-peach p,
+.dark-mode .card-peach li {
+    color: #36454F !important;
+}
+
 .dark-mode img[src*="logo.png"] {
-    filter: invert(1) brightness(1.2);
+    filter: invert(1) brightness(1.5) contrast(1.1);
 }
 
 .dark-mode .navbar {
@@ -74,6 +93,11 @@ body.dark-mode {
     color: var(--color-charcoal);
 }
 
+.dark-mode .form-label,
+.dark-mode .form-check-label {
+    color: var(--color-charcoal) !important;
+}
+
 .dark-mode .form-control:focus {
     background-color: rgba(251, 249, 246, 0.05);
     border-color: var(--color-charcoal);
@@ -92,6 +116,10 @@ body.dark-mode {
 .dark-mode .accordion-button:not(.collapsed) {
     background-color: rgba(251, 249, 246, 0.03);
     color: var(--color-charcoal);
+}
+
+.dark-mode .accordion-body {
+    color: var(--color-charcoal) !important;
 }
 
 .dark-mode hr {
@@ -119,11 +147,60 @@ body.dark-mode {
 .dark-mode footer,
 .dark-mode footer .editorial-title,
 .dark-mode footer a,
-.dark-mode [style*="color: var(--color-off-white)"],
 .dark-mode .text-off-white {
     color: var(--color-charcoal) !important;
 }
 
 .dark-mode footer a:hover {
     color: var(--color-terracotta) !important;
+}
+
+/* Hamburger & Close Icon Visibility in Dark Mode */
+.dark-mode .hamburger-line {
+    background-color: var(--color-charcoal) !important;
+}
+
+.dark-mode .navbar-toggler:not(.collapsed) .hamburger-line {
+    background-color: var(--color-charcoal) !important;
+}
+
+/* Organic Shape Visibility & Glow Polish */
+.dark-mode .organic-shape {
+    background-color: rgba(251, 249, 246, 0.05) !important;
+    border: 1px solid rgba(251, 249, 246, 0.3) !important;
+    box-shadow: 0 0 20px rgba(251, 249, 246, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    transition: var(--transition-physical);
+}
+
+.dark-mode .organic-shape:hover {
+    border-color: var(--color-terracotta) !important;
+    box-shadow: 0 0 30px rgba(204, 124, 107, 0.2), 0 15px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+.dark-mode .organic-shape i {
+    color: var(--color-peach) !important;
+    filter: drop-shadow(0 0 8px rgba(250, 220, 210, 0.4));
+}
+
+/* Subtle Glow for Tactile Cards */
+.dark-mode .tactile-card {
+    border-color: rgba(251, 249, 246, 0.1) !important;
+    box-shadow: 0 0 15px rgba(251, 249, 246, 0.05), 20px 20px 60px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Dashboard Specifics */
+.dark-mode .dashboard-stat {
+    background: rgba(251, 249, 246, 0.03) !important;
+    border-color: rgba(251, 249, 246, 0.05) !important;
+}
+
+.dark-mode .table td, 
+.dark-mode .table th {
+    color: var(--color-charcoal) !important;
+}
+
+.dark-mode .badge.bg-light {
+    background-color: rgba(251, 249, 246, 0.05) !important;
+    border-color: rgba(251, 249, 246, 0.1) !important;
+    color: var(--color-charcoal) !important;
 }
