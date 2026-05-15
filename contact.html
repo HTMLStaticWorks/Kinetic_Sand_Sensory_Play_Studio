@@ -36,10 +36,12 @@
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <span class="editorial-title">Kinetic Studio</span>
                 </a>
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler custom-hamburger shadow-none border-0 collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
@@ -194,14 +196,12 @@
                     <h2 class="display-medium editorial-title mb-4">Studio <br>Compass</h2>
                     <p class="lead text-muted">Navigate your way to our tactile sanctuary.</p>
                 </div>
-                <div class="tactile-card p-0 overflow-hidden reveal-item" style="height: 450px; border: none; border-radius: 2rem;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164965!2d-73.98509668459375!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1625687352345!5m2!1sen!2sus" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; filter: grayscale(1) contrast(1.2) invert(0.1);" 
-                        allowfullscreen="" 
-                        loading="lazy">
+                <div class="tactile-card p-0 overflow-hidden reveal-item"
+                    style="height: 450px; border: none; border-radius: 2rem;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164965!2d-73.98509668459375!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1625687352345!5m2!1sen!2sus"
+                        width="100%" height="100%" style="border:0; filter: grayscale(1) contrast(1.2) invert(0.1);"
+                        allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -212,27 +212,41 @@
             <div class="container">
                 <div class="row g-4">
                     <div class="col-md-4 reveal-item">
-                        <div class="tactile-card h-100 text-center py-5">
+                        <div class="tactile-card h-100 text-center py-5 d-flex flex-column">
                             <i class="bi bi-chat-heart text-terracotta display-5 mb-4"></i>
                             <h4 class="fw-bold mb-3">Live Support</h4>
-                            <p class="small text-muted mb-4">Instant answers via our digital concierge during studio hours.</p>
-                            <button class="btn btn-outline-charcoal rounded-pill px-4" style="border: 1px solid var(--color-charcoal); color: var(--color-charcoal);">Start Chat</button>
+                            <p class="small text-muted mb-4">Instant answers via our digital concierge during studio
+                                hours.</p>
+                            <div class="mt-auto">
+                                <button class="btn btn-outline-dark rounded-pill px-4 fw-bold small text-uppercase letter-spacing-lg" style="min-width: 180px;">Start
+                                    Chat</button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4 reveal-item" style="transition-delay: 0.1s;">
-                        <div class="tactile-card h-100 text-center py-5">
+                        <div class="tactile-card h-100 text-center py-5 d-flex flex-column">
                             <i class="bi bi-journal-text text-terracotta display-5 mb-4"></i>
                             <h4 class="fw-bold mb-3">Press Inquiries</h4>
-                            <p class="small text-muted mb-4">For media kits and interview requests regarding our sensory lab.</p>
-                            <a href="mailto:press@kineticsandstudio.com" class="text-charcoal fw-bold small text-uppercase letter-spacing-lg text-decoration-none">Email Press</a>
+                            <p class="small text-muted mb-4">For media kits and interview requests regarding our sensory
+                                lab.</p>
+                            <div class="mt-auto">
+                                <a href="mailto:press@kineticsandstudio.com"
+                                    class="btn btn-outline-dark rounded-pill px-4 fw-bold small text-uppercase letter-spacing-lg text-decoration-none" style="min-width: 180px;">Email
+                                    Press</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4 reveal-item" style="transition-delay: 0.2s;">
-                        <div class="tactile-card h-100 text-center py-5">
+                        <div class="tactile-card h-100 text-center py-5 d-flex flex-column">
                             <i class="bi bi-building text-terracotta display-5 mb-4"></i>
                             <h4 class="fw-bold mb-3">Partnerships</h4>
-                            <p class="small text-muted mb-4">Collaborate with us on installations or community workshops.</p>
-                            <a href="#" class="text-charcoal fw-bold small text-uppercase letter-spacing-lg text-decoration-none">Learn More</a>
+                            <p class="small text-muted mb-4">Collaborate with us on installations or community
+                                workshops.</p>
+                            <div class="mt-auto">
+                                <a href="#"
+                                    class="btn btn-outline-dark rounded-pill px-4 fw-bold small text-uppercase letter-spacing-lg text-decoration-none" style="min-width: 180px;">Learn
+                                    More</a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -36,6 +36,55 @@
             background: var(--color-off-white);
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
+
+        /* Responsive Dashboard Menu Buttons */
+        @media (max-width: 991px) {
+            .dashboard-tabs {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 0.75rem !important;
+                justify-content: center !important;
+                padding: 0 !important;
+                margin-top: 2rem !important;
+            }
+            .dashboard-tabs li {
+                margin-bottom: 0 !important;
+                margin-top: 0 !important;
+            }
+            .dashboard-tabs .tab-link,
+            .dashboard-tabs .text-terracotta {
+                display: flex !important;
+                align-items: center !important;
+                padding: 0.6rem 1.2rem !important;
+                background: rgba(var(--color-charcoal-rgb), 0.04) !important;
+                border-radius: 1rem !important;
+                border: 1px solid rgba(var(--color-charcoal-rgb), 0.08) !important;
+                font-size: 0.85rem !important;
+                transition: var(--transition-physical) !important;
+                white-space: nowrap;
+                opacity: 1 !important; /* Ensure visibility */
+            }
+            .dashboard-tabs .tab-link.fw-bold {
+                background: var(--color-off-white) !important;
+                color: var(--color-charcoal) !important;
+                border: 1px solid var(--color-charcoal) !important;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            }
+            .dashboard-tabs .tab-link.fw-bold i {
+                opacity: 1 !important;
+            }
+            .dashboard-tabs .tab-link:not(.fw-bold):hover,
+            .dashboard-tabs .text-terracotta:hover {
+                background: rgba(var(--color-charcoal-rgb), 0.08) !important;
+                transform: translateY(-2px);
+            }
+            .dashboard-tabs .mt-5 {
+                margin-top: 0 !important;
+            }
+            .dashboard-tabs .me-3 {
+                margin-right: 0.5rem !important;
+            }
+        }
     </style>
 </head>
 <body>

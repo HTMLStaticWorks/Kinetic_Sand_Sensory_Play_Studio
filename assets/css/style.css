@@ -92,10 +92,10 @@ h6,
 
 /* Hero section subtext visibility fix */
 .hero-section .lead,
-main > section:first-of-type .lead {
+main>section:first-of-type .lead {
     font-weight: 600 !important;
     opacity: 1 !important;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .display-large {
@@ -308,6 +308,229 @@ main > section:first-of-type .lead {
     .display-large {
         font-size: 3.5rem;
     }
+
+    /* Center text and buttons in sections on mobile */
+    section, 
+    .section-padding,
+    .hero-section {
+        text-align: center !important;
+    }
+
+    .row {
+        justify-content: center !important;
+    }
+
+    .btn-tactile {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: inline-block !important;
+    }
+
+    .editorial-title {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Enhanced Mobile Navigation Overlay */
+    .navbar-collapse {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: var(--color-off-white) !important;
+        backdrop-filter: blur(20px);
+        z-index: 1090;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-smooth);
+        padding: 80px 1.5rem 2rem 1.5rem !important;
+        margin: 0 !important;
+        overflow-y: auto !important;
+    }
+
+    .navbar-collapse.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-nav {
+        width: 100% !important;
+        max-width: 500px;
+        margin: 0 !important;
+        padding: 0.5rem !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        margin: 0.6rem 0 !important;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--transition-physical);
+    }
+
+    .navbar-collapse.show .nav-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Staggered animation for nav items */
+    .navbar-collapse.show .nav-item:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(2) {
+        transition-delay: 0.15s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(3) {
+        transition-delay: 0.2s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(4) {
+        transition-delay: 0.25s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(5) {
+        transition-delay: 0.3s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(6) {
+        transition-delay: 0.35s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(7) {
+        transition-delay: 0.4s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(8) {
+        transition-delay: 0.45s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(9) {
+        transition-delay: 0.5s;
+    }
+
+    .nav-link {
+        font-size: 1rem !important;
+        font-weight: 500;
+        padding: 0.5rem 0 !important;
+        margin: 0 !important;
+        display: inline-block;
+    }
+
+    .nav-link::after {
+        bottom: 0;
+    }
+
+    /* Dropdown adjustment on mobile */
+    .dropdown-menu {
+        position: static !important;
+        float: none !important;
+        width: 100% !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0.5rem 0 !important;
+        margin: 0 !important;
+        text-align: center;
+        display: none;
+        animation: none !important; /* Disable animation to prevent overlapping during transition */
+    }
+
+    .dropdown-menu.show {
+        display: block !important;
+    }
+
+    .dropdown-item {
+        font-size: 0.9rem !important;
+        padding: 0.5rem 0 !important;
+        opacity: 0.8;
+    }
+
+    .dropdown-item:hover {
+        background: transparent !important;
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Toggles and Buttons on Mobile */
+    .navbar-nav .nav-item.ms-lg-3,
+    .navbar-nav .nav-item.ms-lg-2 {
+        margin: 0.5rem 0 !important;
+        width: auto !important;
+        display: flex !important;
+        justify-content: center;
+    }
+
+    /* Grouping buttons at the bottom */
+    .navbar-nav .nav-item:nth-last-child(-n+3) {
+        display: flex !important;
+        justify-content: center;
+        gap: 15px;
+        width: 100% !important;
+    }
+
+    .navbar-nav .nav-item:last-child {
+        margin-top: 1rem !important;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar-nav .btn-tactile {
+        padding: 0.8rem 1.5rem !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+/* Custom Animated Hamburger Icon */
+.custom-hamburger {
+    width: 28px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1105;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-charcoal);
+    border-radius: 2px;
+    transition: var(--transition-physical);
+    transform-origin: center;
+}
+
+/* Animation to X */
+.navbar-toggler:not(.collapsed) .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.dark-mode .hamburger-line {
+    background-color: var(--color-off-white);
 }
 
 
@@ -319,8 +542,14 @@ main > section:first-of-type .lead {
     align-items: center;
     justify-content: center;
     border-radius: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     flex-shrink: 0;
+    color: var(--color-charcoal);
+    box-shadow: inset 5px 5px 10px rgba(0,0,0,0.03);
+}
+
+.icon-shape i {
+    color: var(--color-charcoal) !important;
 }
 
 /* Footer Adjustments */
