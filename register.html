@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <title>Register - Kinetic Studio</title>
 </head>
+
 <body class="bg-off-white">
     <!-- Floating Top-Right Controls -->
     <div class="position-fixed top-0 end-0 p-4 z-3 d-flex gap-2">
@@ -34,28 +36,36 @@
                                 <img src="assets/images/logo.png" alt="Kinetic Studio Logo" height="50">
                             </a>
                         </div>
-                        
+
                         <h2 class="fw-bold h3 mb-4">Create Account</h2>
-                        
+
                         <form>
                             <!-- Full Name -->
                             <div class="mb-3 text-start">
                                 <label class="form-label small opacity-75 fw-bold">Full Name</label>
-                                <input type="text" class="form-control px-3 py-2" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-radius: 0.8rem;" required>
+                                <input type="text" class="form-control px-3 py-2"
+                                    style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-radius: 0.8rem;"
+                                    required>
                             </div>
 
                             <!-- Email -->
                             <div class="mb-3 text-start">
                                 <label class="form-label small opacity-75 fw-bold">Email Address</label>
-                                <input type="email" class="form-control px-3 py-2" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-radius: 0.8rem;" required>
+                                <input type="email" class="form-control px-3 py-2"
+                                    style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-radius: 0.8rem;"
+                                    required>
                             </div>
-                            
+
                             <!-- Password -->
                             <div class="mb-3 text-start">
                                 <label class="form-label small opacity-75 fw-bold">Password</label>
                                 <div class="input-group">
-                                    <input type="password" id="register-password" class="form-control px-3 py-2" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-right: none; border-radius: 0.8rem 0 0 0.8rem;" required>
-                                    <button class="btn px-3 toggle-password-btn" type="button" data-target="register-password" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-left: none; border-radius: 0 0.8rem 0.8rem 0;">
+                                    <input type="password" id="register-password" class="form-control px-3 py-2"
+                                        style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-right: none; border-radius: 0.8rem 0 0 0.8rem;"
+                                        required>
+                                    <button class="btn px-3 toggle-password-btn py-2" type="button"
+                                        data-target="register-password"
+                                        style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-left: none; border-radius: 0 0.8rem 0.8rem 0;">
                                         <i class="bi bi-eye-slash text-muted"></i>
                                     </button>
                                 </div>
@@ -65,8 +75,12 @@
                             <div class="mb-3 text-start">
                                 <label class="form-label small opacity-75 fw-bold">Confirm Password</label>
                                 <div class="input-group">
-                                    <input type="password" id="confirm-password" class="form-control px-3 py-2" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-right: none; border-radius: 0.8rem 0 0 0.8rem;" required>
-                                    <button class="btn px-3 toggle-password-btn" type="button" data-target="confirm-password" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-left: none; border-radius: 0 0.8rem 0.8rem 0;">
+                                    <input type="password" id="confirm-password" class="form-control px-3 py-2"
+                                        style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-right: none; border-radius: 0.8rem 0 0 0.8rem;"
+                                        required>
+                                    <button class="btn px-3 toggle-password-btn py-2" type="button"
+                                        data-target="confirm-password"
+                                        style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-left: none; border-radius: 0 0.8rem 0.8rem 0;">
                                         <i class="bi bi-eye-slash text-muted"></i>
                                     </button>
                                 </div>
@@ -74,9 +88,11 @@
 
                             <!-- Terms and Conditions -->
                             <div class="mb-3 text-start d-flex align-items-center gap-2">
-                                <input type="checkbox" id="terms" class="form-check-input mt-0" required style="cursor: pointer; width: 1.1rem; height: 1.1rem; border-radius: 4px; border: 1px solid rgba(var(--color-charcoal-rgb), 0.2);">
+                                <input type="checkbox" id="terms" class="form-check-input mt-0" required
+                                    style="cursor: pointer; width: 1.1rem; height: 1.1rem; border-radius: 4px; border: 1px solid rgba(var(--color-charcoal-rgb), 0.2);">
                                 <label for="terms" class="small text-muted mb-0" style="cursor: pointer;">
-                                    I agree to the <a href="#" class="terms-link fw-bold text-decoration-none">Terms and Conditions</a>
+                                    I agree to the <a href="#" class="terms-link fw-bold text-decoration-none">Terms and
+                                        Conditions</a>
                                 </label>
                             </div>
 
@@ -92,16 +108,24 @@
 
                             <!-- Social Logins -->
                             <div class="d-flex gap-2 justify-content-center mb-4">
-                                <button type="button" class="btn btn-outline-secondary w-50 py-2 d-flex align-items-center justify-content-center gap-2" style="border-radius: 0.8rem;">
-                                    <i class="bi bi-google text-danger"></i> <span class="small fw-semibold">Google</span>
+                                <button type="button"
+                                    class="btn btn-outline-secondary w-50 py-2 d-flex align-items-center justify-content-center gap-2"
+                                    style="border-radius: 0.8rem;">
+                                    <i class="bi bi-google text-danger"></i> <span
+                                        class="small fw-semibold">Google</span>
                                 </button>
-                                <button type="button" class="btn btn-outline-secondary w-50 py-2 d-flex align-items-center justify-content-center gap-2" style="border-radius: 0.8rem;">
-                                    <i class="bi bi-apple text-charcoal"></i> <span class="small fw-semibold">Apple</span>
+                                <button type="button"
+                                    class="btn btn-outline-secondary w-50 py-2 d-flex align-items-center justify-content-center gap-2"
+                                    style="border-radius: 0.8rem;">
+                                    <i class="bi bi-apple text-charcoal"></i> <span
+                                        class="small fw-semibold">Apple</span>
                                 </button>
                             </div>
 
                             <!-- Login Link -->
-                            <p class="small text-muted mb-0">Already have an account? <a href="login.html" class="fw-bold text-decoration-none auth-link" style="color: var(--color-terracotta);">Login</a></p>
+                            <p class="small text-muted mb-0">Already have an account? <a href="login.html"
+                                    class="fw-bold text-decoration-none auth-link"
+                                    style="color: var(--color-terracotta);">Login</a></p>
                         </form>
                     </div>
                 </div>
@@ -113,11 +137,11 @@
     <script>
         // Password Visibility Toggles
         document.querySelectorAll('.toggle-password-btn').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const targetId = this.getAttribute('data-target');
                 const passwordInput = document.getElementById(targetId);
                 const toggleIcon = this.querySelector('i');
-                
+
                 if (passwordInput.type === 'password') {
                     passwordInput.type = 'text';
                     toggleIcon.classList.replace('bi-eye-slash', 'bi-eye');
@@ -129,4 +153,5 @@
         });
     </script>
 </body>
+
 </html>

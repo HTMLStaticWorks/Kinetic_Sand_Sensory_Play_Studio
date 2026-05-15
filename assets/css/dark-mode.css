@@ -113,6 +113,10 @@ body.dark-mode {
     color: var(--color-charcoal);
 }
 
+.dark-mode .accordion-button::after {
+    filter: brightness(0) invert(1);
+}
+
 .dark-mode .accordion-button:not(.collapsed) {
     background-color: rgba(251, 249, 246, 0.03);
     color: var(--color-charcoal);
@@ -203,4 +207,31 @@ body.dark-mode {
     background-color: rgba(251, 249, 246, 0.05) !important;
     border-color: rgba(251, 249, 246, 0.1) !important;
     color: var(--color-charcoal) !important;
+}
+
+.dark-mode .badge.bg-peach {
+    background-color: var(--color-peach) !important;
+    color: #36454F !important;
+    border: none !important;
+}
+
+.dark-mode .btn-outline-terracotta {
+    border-color: var(--color-terracotta) !important;
+    color: var(--color-terracotta) !important;
+}
+
+.dark-mode .btn-outline-terracotta:hover {
+    background-color: var(--color-terracotta) !important;
+    color: #FBF9F6 !important;
+}
+/* Button Visibility Fixes */
+.dark-mode .btn-tactile-outline {
+    border: 2px solid var(--color-charcoal) !important;
+    color: var(--color-charcoal) !important;
+}
+
+.dark-mode .btn-tactile-outline:hover {
+    background-color: var(--color-charcoal) !important;
+    color: var(--color-off-white) !important;
+    box-shadow: 0 0 20px rgba(251, 249, 246, 0.1) !important;
 }
