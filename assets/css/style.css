@@ -90,6 +90,14 @@ h6,
     color: var(--color-charcoal);
 }
 
+/* Hero section subtext visibility fix */
+.hero-section .lead,
+main > section:first-of-type .lead {
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
 .display-large {
     font-size: clamp(3rem, 10vw, 8rem);
 }
@@ -117,6 +125,18 @@ h6,
     color: var(--color-off-white);
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(204, 124, 107, 0.3);
+}
+
+/* Auth Links */
+.auth-link {
+    position: relative;
+    transition: var(--transition-physical);
+}
+
+.auth-link:hover {
+    color: var(--color-charcoal) !important;
+    text-decoration: underline !important;
+    opacity: 0.8;
 }
 
 .btn-toggle-tactile {
@@ -303,6 +323,62 @@ h6,
     flex-shrink: 0;
 }
 
+/* Footer Adjustments */
+footer.section-padding {
+    padding: var(--spacing-lg) 0 2rem 0 !important;
+}
+
+footer hr.my-5 {
+    margin-top: 2rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
 .bg-sand {
     background-color: var(--color-sand);
+}
+
+.text-charcoal {
+    color: var(--color-charcoal) !important;
+}
+
+.text-off-white {
+    color: var(--color-off-white) !important;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-terracotta);
+    color: var(--color-off-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 30px rgba(204, 124, 107, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: var(--transition-physical);
+    border: none;
+    text-decoration: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--color-charcoal);
+    color: var(--color-off-white);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(54, 69, 79, 0.4);
 }

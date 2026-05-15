@@ -51,7 +51,10 @@ body.dark-mode {
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.dark-mode .section-padding[style*="background-color"] {
+.dark-mode .section-padding[style*="background-color"],
+.dark-mode .bg-white,
+.dark-mode .bg-light,
+.dark-mode .bg-sand {
     background-color: rgba(251, 249, 246, 0.02) !important;
 }
 
@@ -105,4 +108,17 @@ body.dark-mode {
     background: var(--color-terracotta);
     color: var(--color-off-white);
     border-color: var(--color-terracotta);
+}
+
+/* Fix footer and explicit text colors in dark mode because sections are forced to dark background */
+.dark-mode footer,
+.dark-mode footer .editorial-title,
+.dark-mode footer a,
+.dark-mode [style*="color: var(--color-off-white)"],
+.dark-mode .text-off-white {
+    color: var(--color-charcoal) !important;
+}
+
+.dark-mode footer a:hover {
+    color: var(--color-terracotta) !important;
 }

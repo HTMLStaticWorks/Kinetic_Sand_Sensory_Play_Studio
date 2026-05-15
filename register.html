@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <title>Login - Kinetic Studio</title>
+    <title>Register - Kinetic Studio</title>
 </head>
 <body class="bg-off-white">
     <!-- Floating Top-Right Controls -->
@@ -34,9 +34,15 @@
                             </a>
                         </div>
                         
-                        <h2 class="fw-bold h3 mb-4">Welcome Back</h2>
+                        <h2 class="fw-bold h3 mb-4">Create Account</h2>
                         
                         <form>
+                            <!-- Full Name -->
+                            <div class="mb-3 text-start">
+                                <label class="form-label small opacity-75 fw-bold">Full Name</label>
+                                <input type="text" class="form-control px-3 py-2" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-radius: 0.8rem;" required>
+                            </div>
+
                             <!-- Email -->
                             <div class="mb-3 text-start">
                                 <label class="form-label small opacity-75 fw-bold">Email Address</label>
@@ -47,26 +53,15 @@
                             <div class="mb-3 text-start">
                                 <label class="form-label small opacity-75 fw-bold">Password</label>
                                 <div class="input-group">
-                                    <input type="password" id="login-password" class="form-control px-3 py-2" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-right: none; border-radius: 0.8rem 0 0 0.8rem;" required>
+                                    <input type="password" id="register-password" class="form-control px-3 py-2" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-right: none; border-radius: 0.8rem 0 0 0.8rem;" required>
                                     <button class="btn px-3" type="button" id="toggle-password" style="background: rgba(var(--color-charcoal-rgb), 0.03); border: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2); border-left: none; border-radius: 0 0.8rem 0.8rem 0;">
                                         <i class="bi bi-eye-slash text-muted" id="toggle-icon"></i>
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Remember & Forgot -->
-                            <div class="d-flex justify-content-between align-items-center mb-4 small">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="rememberMe">
-                                    <label class="form-check-label opacity-75" for="rememberMe" style="cursor: pointer;">
-                                        Remember me
-                                    </label>
-                                </div>
-                                <a href="#" class="text-decoration-none fw-bold auth-link" style="color: var(--color-terracotta);">Forgot Password?</a>
-                            </div>
-
-                            <!-- Login Button -->
-                            <button type="submit" class="btn-tactile w-100 py-3 mb-4">Login</button>
+                            <!-- Register Button -->
+                            <button type="submit" class="btn-tactile w-100 py-3 mb-4 mt-2">Sign Up</button>
 
                             <!-- Divider -->
                             <div class="d-flex align-items-center mb-4">
@@ -85,8 +80,8 @@
                                 </button>
                             </div>
 
-                            <!-- Sign Up Link -->
-                            <p class="small text-muted mb-0">Don't have an account? <a href="register.html" class="fw-bold text-decoration-none auth-link" style="color: var(--color-terracotta);">Sign Up</a></p>
+                            <!-- Login Link -->
+                            <p class="small text-muted mb-0">Already have an account? <a href="login.html" class="fw-bold text-decoration-none auth-link" style="color: var(--color-terracotta);">Login</a></p>
                         </form>
                     </div>
                 </div>
@@ -98,7 +93,7 @@
     <script>
         // Password Visibility Toggle
         document.getElementById('toggle-password').addEventListener('click', function (e) {
-            const passwordInput = document.getElementById('login-password');
+            const passwordInput = document.getElementById('register-password');
             const toggleIcon = document.getElementById('toggle-icon');
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';

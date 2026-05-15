@@ -109,27 +109,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const initSandEffect = (canvasId) => {
-        const canvas = document.getElementById(canvasId);
-        if (!canvas) return;
+    // 4. Global Digital Sand Physics Overlay
+    const globalSandCanvas = document.createElement('canvas');
+    globalSandCanvas.id = 'global-sand-particles';
+    globalSandCanvas.style.position = 'fixed';
+    globalSandCanvas.style.top = '0';
+    globalSandCanvas.style.left = '0';
+    globalSandCanvas.style.width = '100vw';
+    globalSandCanvas.style.height = '100vh';
+    globalSandCanvas.style.pointerEvents = 'none';
+    globalSandCanvas.style.zIndex = '9998'; // Above content, below grain
+    document.body.appendChild(globalSandCanvas);
+
+    const initGlobalSandEffect = () => {
+        const canvas = globalSandCanvas;
         const ctx = canvas.getContext('2d');
         let particles = [];
         let mouse = { x: null, y: null, radius: 150 };
 
         const resize = () => {
-            canvas.width = canvas.parentElement.clientWidth;
-            canvas.height = canvas.parentElement.clientHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
             particles = [];
-            for (let i = 0; i < 150; i++) {
+            const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 10000), 300); // Scale with screen, max 300
+            for (let i = 0; i < particleCount; i++) {
                 particles.push(new SandParticle(canvas));
             }
         };
 
         window.addEventListener('mousemove', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            mouse.x = e.clientX - rect.left;
-            mouse.y = e.clientY - rect.top;
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
         });
+
+        // Touch support for mobile
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                mouse.x = e.touches[0].clientX;
+                mouse.y = e.touches[0].clientY;
+            }
+        }, { passive: true });
 
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -145,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', resize);
     };
 
-    initSandEffect('hero-particles');
+    initGlobalSandEffect();
 
     // 5. Reveal Animations
     const observer = new IntersectionObserver((entries) => {
@@ -164,4 +183,31 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
         observer.observe(el);
     });
+ 
+    // 6. Back to Top Button (Excluded on specific pages)
+    const excludedPages = ['dashboard.html', 'login.html', 'register.html'];
+    const isExcluded = excludedPages.some(page => window.location.pathname.includes(page));
+
+    if (!isExcluded) {
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.className = 'back-to-top';
+        backToTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+        document.body.appendChild(backToTopBtn);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
