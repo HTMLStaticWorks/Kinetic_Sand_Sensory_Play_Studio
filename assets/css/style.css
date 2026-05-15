@@ -207,6 +207,20 @@ main>section:first-of-type .lead {
     color: var(--color-charcoal) !important;
 }
 
+.navbar-brand img {
+    transition: var(--transition-physical);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+    max-width: 200px;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+footer img[src*="logo.png"] {
+    max-width: 180px;
+}
+
 .nav-link {
     font-weight: 500;
     font-size: 0.9rem;

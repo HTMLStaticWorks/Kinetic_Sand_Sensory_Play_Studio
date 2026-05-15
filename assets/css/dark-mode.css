@@ -12,8 +12,13 @@ body.dark-mode {
 .dark-mode h5,
 .dark-mode h6,
 .dark-mode .editorial-title,
-.dark-mode .navbar-brand {
+.dark-mode .navbar-brand,
+.dark-mode .navbar-brand img {
     color: var(--color-charcoal) !important;
+}
+
+.dark-mode img[src*="logo.png"] {
+    filter: invert(1) brightness(1.2);
 }
 
 .dark-mode .navbar {
