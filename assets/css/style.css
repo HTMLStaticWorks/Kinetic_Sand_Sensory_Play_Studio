@@ -1158,3 +1158,14 @@ footer a:hover {
 .dark-mode .birthday-overlay {
     background: rgba(26, 26, 26, 0.85);
 }
+.home-nav.active {
+    color: var(--color-terracotta) !important;
+}
+
+.home-nav.active::after {
+    width: 100% !important;
+}
+
+.home-nav.active i {
+    color: var(--color-terracotta) !important;
+}

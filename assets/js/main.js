@@ -35,6 +35,13 @@ if (!currentFilename || currentFilename === '') {
     currentFilename = 'index.html';
 }
     console.log('Current filename:', currentFilename);
+    if (currentFilename === 'index.html') {
+    document.querySelector('.home-nav')?.classList.add('active');
+}
+
+if (currentFilename === 'index2.html') {
+    document.querySelector('.home-nav')?.classList.add('active');
+}
     
     // Check main nav links
     navLinks.forEach(link => {
