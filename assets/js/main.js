@@ -29,7 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return filename === '' ? 'index.html' : filename;
     };
     
-    const currentFilename = getFilename(currentPath);
+    let currentFilename = window.location.pathname.split('/').pop();
+
+if (!currentFilename || currentFilename === '') {
+    currentFilename = 'index.html';
+}
     console.log('Current filename:', currentFilename);
     
     // Check main nav links
