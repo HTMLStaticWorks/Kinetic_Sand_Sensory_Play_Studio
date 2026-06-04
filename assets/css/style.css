@@ -379,7 +379,12 @@ footer a:hover img[src*="logo.png"] {
 
 .nav-link:hover::after,
 .nav-link.active::after {
-    width: 20px;
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--color-terracotta) !important;
+    font-weight: 600;
 }
 
 /* Tactile Dropdowns */
@@ -454,9 +459,9 @@ footer a:hover img[src*="logo.png"] {
 }
 
 /* Responsive Fixes */
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
 
-    /* Force navbar toggler to show and collapse to stay hidden up to 1100px */
+    /* Force navbar toggler to show and collapse to stay hidden up to 1000px */
     .navbar-expand-lg .navbar-toggler {
         display: flex !important;
     }

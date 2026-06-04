@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Manage your sensory experiences and bookings at Kinetic Sand & Sensory Play Studio.">
+    <meta name="description"
+        content="Manage your sensory experiences and bookings at Kinetic Sand & Sensory Play Studio.">
     <meta name="keywords" content="dashboard, sensory bookings, my account, kinetic studio profile">
     <meta property="og:title" content="User Dashboard | Kinetic Sand & Sensory Play Studio">
-    <meta property="og:description" content="Manage your sensory experiences and bookings at Kinetic Sand & Sensory Play Studio.">
+    <meta property="og:description"
+        content="Manage your sensory experiences and bookings at Kinetic Sand & Sensory Play Studio.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.kineticsandstudio.com/dashboard.html">
     <link rel="canonical" href="https://www.kineticsandstudio.com/dashboard.html">
@@ -32,65 +35,101 @@
             border: 1px solid rgba(var(--color-charcoal-rgb), 0.03);
             transition: var(--transition-physical);
         }
+
         .dashboard-stat:hover {
             transform: translateY(-5px);
             background: var(--color-off-white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
         }
 
-        /* Responsive Dashboard Menu Buttons */
-        @media (max-width: 1100px) {
-            .dashboard-tabs {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                gap: 0.75rem !important;
-                justify-content: center !important;
-                padding: 0 !important;
-                margin-top: 2rem !important;
+        /* Hide desktop dashboard menu on screens smaller than 1000px */
+        @media (max-width: 1000px) {
+            .dashboard-sidebar-desktop {
+                display: none !important;
             }
-            .dashboard-tabs li {
-                margin-bottom: 0 !important;
-                margin-top: 0 !important;
+            .dashboard-sidebar-desktop * {
+                display: none !important;
             }
-            .dashboard-tabs .tab-link,
-            .dashboard-tabs .text-terracotta {
+        }
+
+        /* Show desktop dashboard menu on screens 1200px and larger */
+        @media (min-width: 1200px) {
+            .dashboard-sidebar-desktop {
+                display: block !important;
+            }
+            
+            /* Style sidebar menu for desktop */
+            .dashboard-sidebar-desktop .dashboard-tabs .tab-link,
+            .dashboard-sidebar-desktop .dashboard-tabs .text-terracotta {
                 display: flex !important;
                 align-items: center !important;
-                padding: 0.6rem 1.2rem !important;
-                background: rgba(var(--color-charcoal-rgb), 0.04) !important;
-                border-radius: 1rem !important;
-                border: 1px solid rgba(var(--color-charcoal-rgb), 0.08) !important;
-                font-size: 0.85rem !important;
-                transition: var(--transition-physical) !important;
-                white-space: nowrap;
-                opacity: 1 !important; /* Ensure visibility */
+                padding: 0.75rem 1rem !important;
+                border-radius: 0.75rem !important;
+                transition: all 0.3s ease !important;
             }
-            .dashboard-tabs .tab-link.fw-bold {
-                background: var(--color-off-white) !important;
-                color: var(--color-charcoal) !important;
-                border: 1px solid var(--color-charcoal) !important;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            
+            .dashboard-sidebar-desktop .dashboard-tabs .tab-link:hover,
+            .dashboard-sidebar-desktop .dashboard-tabs .text-terracotta:hover {
+                background-color: rgba(var(--color-charcoal-rgb), 0.05) !important;
+                transform: translateX(5px);
             }
-            .dashboard-tabs .tab-link.fw-bold i {
-                opacity: 1 !important;
+            
+            .dashboard-sidebar-desktop .dashboard-tabs .tab-link i,
+            .dashboard-sidebar-desktop .dashboard-tabs .text-terracotta i {
+                width: 24px;
+                text-align: center;
+                margin-right: 12px;
             }
-            .dashboard-tabs .tab-link:not(.fw-bold):hover,
-            .dashboard-tabs .text-terracotta:hover {
-                background: rgba(var(--color-charcoal-rgb), 0.08) !important;
-                transform: translateY(-2px);
+        }
+
+        /* Mobile Dashboard Menu Styles */
+        @media (max-width: 991px) {
+            .dashboard-tabs li {
+                margin-bottom: 0.5rem !important;
             }
+
             .dashboard-tabs .mt-5 {
-                margin-top: 0 !important;
+                margin-top: 1.5rem !important;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
             }
-            .dashboard-tabs .me-3 {
-                margin-right: 0.5rem !important;
+
+            .dashboard-tabs .tab-link,
+            .dashboard-tabs .text-terracotta {
+                display: block;
+                padding: 0.75rem 1rem;
+                border-radius: 0.75rem;
+                transition: all 0.2s ease;
+                background: rgba(var(--color-charcoal-rgb), 0.02);
+            }
+
+            .dashboard-tabs .tab-link.fw-bold {
+                background: var(--color-off-white);
+                border: 1px solid rgba(var(--color-charcoal-rgb), 0.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            }
+
+            .dashboard-tabs .tab-link:hover,
+            .dashboard-tabs .text-terracotta:hover {
+                background: rgba(var(--color-charcoal-rgb), 0.05);
+            }
+            
+            /* Improve sidebar layout on mobile */
+            .col-lg-4.reveal-item {
+                margin-bottom: 2rem;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="fixed-top-right p-4 d-flex gap-2" style="position: fixed; top: 0; right: 0; z-index: 1050;">
+    <div class="position-fixed top-0 end-0 p-4 z-3 d-flex gap-2 align-items-center">
+        <button class="btn-toggle-tactile shadow-sm d-lg-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#dashboardMenuMobile" aria-controls="dashboardMenuMobile"
+            aria-label="Toggle Dashboard Menu">
+            <i class="bi bi-list fs-5"></i>
+        </button>
         <button class="btn-toggle-tactile shadow-sm" id="theme-toggle" aria-label="Toggle theme">
             <i class="bi bi-moon-fill"></i>
         </button>
@@ -110,18 +149,40 @@
                         </a>
                         <h2 class="display-5 fw-bold mb-5">Welcome Back.</h2>
                         <p class="text-muted small mb-4">Guest Explorer</p>
-                        <div class="organic-shape mx-auto mb-4 shadow-sm" style="width: 120px; height: 120px; background-color: var(--color-sand);">
-                            <img src="https://ui-avatars.com/api/?name=Guest+User&background=D4C1A5&color=36454F&size=128" class="img-fluid" alt="User Profile">
+                        <div class="organic-shape mx-auto mb-4 shadow-sm"
+                            style="width: 120px; height: 120px; background-color: var(--color-sand);">
+                            <img src="https://ui-avatars.com/api/?name=Guest+User&background=D4C1A5&color=36454F&size=128"
+                                class="img-fluid" alt="User Profile">
                         </div>
-                        <hr class="my-4 opacity-10">
-                        <ul class="list-unstyled text-start mb-0 dashboard-tabs">
-                            <li class="mb-3"><a href="#" class="tab-link text-decoration-none text-charcoal fw-bold" data-target="profile"><i class="bi bi-person me-3 opacity-50"></i> My Profile</a></li>
-                            <li class="mb-3"><a href="#" class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100" data-target="bookings"><i class="bi bi-calendar-event me-3 opacity-50"></i> My Bookings</a></li>
-                            <li class="mb-3"><a href="#" class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100" data-target="waivers"><i class="bi bi-file-earmark-check me-3 opacity-50"></i> Signed Waivers</a></li>
-                            <li class="mb-3"><a href="#" class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100" data-target="analytics"><i class="bi bi-graph-up me-3 opacity-50"></i> Activity Analytics</a></li>
-                            <li class="mb-3"><a href="#" class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100" data-target="settings"><i class="bi bi-gear me-3 opacity-50"></i> Settings</a></li>
-                            <li class="mt-5"><a href="index.html" class="text-decoration-none text-terracotta fw-bold"><i class="bi bi-box-arrow-right me-3"></i> Logout</a></li>
-                        </ul>
+                        <hr class="my-4 opacity-10 dashboard-sidebar-desktop" style="display: block;">
+
+                        <!-- Desktop Dashboard Menu -->
+                        <div class="dashboard-sidebar-desktop">
+                            <ul class="list-unstyled text-start mb-0 dashboard-tabs w-100">
+                                <li class="mb-3"><a href="#" class="tab-link text-decoration-none text-charcoal fw-bold"
+                                        data-target="profile"><i class="bi bi-person me-3 opacity-50"></i> My
+                                        Profile</a></li>
+                                <li class="mb-3"><a href="#"
+                                        class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100"
+                                        data-target="bookings"><i class="bi bi-calendar-event me-3 opacity-50"></i> My
+                                        Bookings</a></li>
+                                <li class="mb-3"><a href="#"
+                                        class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100"
+                                        data-target="waivers"><i class="bi bi-file-earmark-check me-3 opacity-50"></i>
+                                        Signed Waivers</a></li>
+                                <li class="mb-3"><a href="#"
+                                        class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100"
+                                        data-target="analytics"><i class="bi bi-graph-up me-3 opacity-50"></i> Activity
+                                        Analytics</a></li>
+                                <li class="mb-3"><a href="#"
+                                        class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100"
+                                        data-target="settings"><i class="bi bi-gear me-3 opacity-50"></i> Settings</a>
+                                </li>
+                                <li class="mt-5"><a href="index.html"
+                                        class="text-decoration-none text-terracotta fw-bold"><i
+                                            class="bi bi-box-arrow-right me-3"></i> Logout</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -129,79 +190,94 @@
                 <div class="col-lg-8">
                     <div id="profile" class="tab-content-panel" style="display: block;">
                         <div class="row g-4 mb-5 reveal-item">
-                        <div class="col-md-6">
-                            <div class="dashboard-stat h-100 d-flex flex-column">
-                                <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-3">Next Session</h6>
-                                <h4 class="editorial-title mb-0">Creative Sand Lab</h4>
-                                <p class="text-muted small mt-2">May 24, 2026 at 2:00 PM</p>
-                                <div class="mt-auto pt-3">
-                                    <a href="#" class="btn btn-link text-terracotta p-0 text-decoration-none small fw-bold">Reschedule <i class="bi bi-arrow-right"></i></a>
+                            <div class="col-md-6">
+                                <div class="dashboard-stat h-100 d-flex flex-column">
+                                    <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-3">Next Session</h6>
+                                    <h4 class="editorial-title mb-0">Creative Sand Lab</h4>
+                                    <p class="text-muted small mt-2">May 24, 2026 at 2:00 PM</p>
+                                    <div class="mt-auto pt-3">
+                                        <a href="#"
+                                            class="btn btn-link text-terracotta p-0 text-decoration-none small fw-bold">Reschedule
+                                            <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="dashboard-stat h-100 d-flex flex-column">
+                                    <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-3">Loyalty Points
+                                    </h6>
+                                    <h4 class="editorial-title mb-0">1,250 XP</h4>
+                                    <p class="text-muted small mt-2">250 points until your next reward.</p>
+                                    <div class="mt-auto pt-3">
+                                        <a href="#"
+                                            class="btn btn-link text-charcoal p-0 text-decoration-none small fw-bold">View
+                                            Rewards <i class="bi bi-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="dashboard-stat h-100 d-flex flex-column">
-                                <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-3">Loyalty Points</h6>
-                                <h4 class="editorial-title mb-0">1,250 XP</h4>
-                                <p class="text-muted small mt-2">250 points until your next reward.</p>
-                                <div class="mt-auto pt-3">
-                                    <a href="#" class="btn btn-link text-charcoal p-0 text-decoration-none small fw-bold">View Rewards <i class="bi bi-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="reveal-item" style="transition-delay: 0.1s;">
-                        <h3 class="editorial-title h4 mb-4">Recent Bookings</h3>
-                        <div class="tactile-card p-4">
-                            <div class="table-responsive">
-                                <table class="table table-borderless align-middle mb-0">
-                                    <thead>
-                                        <tr class="small opacity-50 border-bottom">
-                                            <th class="pb-3 fw-normal">Experience</th>
-                                            <th class="pb-3 fw-normal">Date</th>
-                                            <th class="pb-3 fw-normal">Status</th>
-                                            <th class="pb-3 fw-normal text-end">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="py-3 fw-bold">Texture Discovery Zone</td>
-                                            <td class="py-3 text-muted">May 10, 2026</td>
-                                            <td class="py-3"><span class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span></td>
-                                            <td class="py-3 text-end"><a href="#" class="btn btn-link text-charcoal p-0"><i class="bi bi-download"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-3 fw-bold">Glow Sensory Room</td>
-                                            <td class="py-3 text-muted">April 15, 2026</td>
-                                            <td class="py-3"><span class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span></td>
-                                            <td class="py-3 text-end"><a href="#" class="btn btn-link text-charcoal p-0"><i class="bi bi-download"></i></a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="reveal-item" style="transition-delay: 0.1s;">
+                            <h3 class="editorial-title h4 mb-4">Recent Bookings</h3>
+                            <div class="tactile-card p-4">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless align-middle mb-0">
+                                        <thead>
+                                            <tr class="small opacity-50 border-bottom">
+                                                <th class="pb-3 fw-normal">Experience</th>
+                                                <th class="pb-3 fw-normal">Date</th>
+                                                <th class="pb-3 fw-normal">Status</th>
+                                                <th class="pb-3 fw-normal text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="py-3 fw-bold">Texture Discovery Zone</td>
+                                                <td class="py-3 text-muted">May 10, 2026</td>
+                                                <td class="py-3"><span
+                                                        class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span>
+                                                </td>
+                                                <td class="py-3 text-end"><a href="#"
+                                                        class="btn btn-link text-charcoal p-0"><i
+                                                            class="bi bi-download"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-3 fw-bold">Glow Sensory Room</td>
+                                                <td class="py-3 text-muted">April 15, 2026</td>
+                                                <td class="py-3"><span
+                                                        class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span>
+                                                </td>
+                                                <td class="py-3 text-end"><a href="#"
+                                                        class="btn btn-link text-charcoal p-0"><i
+                                                            class="bi bi-download"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="mt-5 reveal-item" style="transition-delay: 0.2s;">
-                        <div class="tactile-card p-5 card-peach" style="background-color: var(--color-peach); border: none;">
-                            <div class="row align-items-center">
-                                <div class="col-md-8">
-                                    <h4 class="editorial-title mb-2">Book a New Experience</h4>
-                                    <p class="text-muted small mb-0">Discover new textures and workshops tailored for you.</p>
-                                </div>
-                                <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                                    <a href="experiences.html" class="btn-tactile px-4">Browse All</a>
+                        <div class="mt-5 reveal-item" style="transition-delay: 0.2s;">
+                            <div class="tactile-card p-5 card-peach"
+                                style="background-color: var(--color-peach); border: none;">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <h4 class="editorial-title mb-2">Book a New Experience</h4>
+                                        <p class="text-muted small mb-0">Discover new textures and workshops tailored
+                                            for you.</p>
+                                    </div>
+                                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                        <a href="experiences.html" class="btn-tactile px-4">Browse All</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </div> <!-- End Profile Tab -->
 
                     <!-- BOOKINGS TAB -->
                     <div id="bookings" class="tab-content-panel reveal-item" style="display: none;">
                         <h3 class="editorial-title h4 mb-4">My Bookings</h3>
-                        
+
                         <div class="mb-5">
                             <h5 class="mb-3 opacity-50 small text-uppercase letter-spacing-lg">Upcoming Bookings</h5>
                             <div class="tactile-card p-4">
@@ -219,10 +295,14 @@
                                             <tr>
                                                 <td class="py-3 fw-bold">Creative Sand Lab</td>
                                                 <td class="py-3 text-muted">May 24, 2026 at 2:00 PM</td>
-                                                <td class="py-3"><span class="badge rounded-pill px-3 py-2 bg-peach text-charcoal border-0">Confirmed</span></td>
+                                                <td class="py-3"><span
+                                                        class="badge rounded-pill px-3 py-2 bg-peach text-charcoal border-0">Confirmed</span>
+                                                </td>
                                                 <td class="py-3 text-end">
-                                                    <button class="btn btn-sm btn-outline-terracotta rounded-pill px-3 me-2">Reschedule</button>
-                                                    <button class="btn btn-sm text-muted"><i class="bi bi-x-circle"></i></button>
+                                                    <button
+                                                        class="btn btn-sm btn-outline-terracotta rounded-pill px-3 me-2">Reschedule</button>
+                                                    <button class="btn btn-sm text-muted"><i
+                                                            class="bi bi-x-circle"></i></button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -248,20 +328,32 @@
                                             <tr>
                                                 <td class="py-3 fw-bold">Texture Discovery Zone</td>
                                                 <td class="py-3 text-muted">May 10, 2026</td>
-                                                <td class="py-3"><span class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span></td>
-                                                <td class="py-3 text-end"><a href="#" class="btn btn-link text-charcoal p-0"><i class="bi bi-download"></i></a></td>
+                                                <td class="py-3"><span
+                                                        class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span>
+                                                </td>
+                                                <td class="py-3 text-end"><a href="#"
+                                                        class="btn btn-link text-charcoal p-0"><i
+                                                            class="bi bi-download"></i></a></td>
                                             </tr>
                                             <tr>
                                                 <td class="py-3 fw-bold">Glow Sensory Room</td>
                                                 <td class="py-3 text-muted">April 15, 2026</td>
-                                                <td class="py-3"><span class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span></td>
-                                                <td class="py-3 text-end"><a href="#" class="btn btn-link text-charcoal p-0"><i class="bi bi-download"></i></a></td>
+                                                <td class="py-3"><span
+                                                        class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span>
+                                                </td>
+                                                <td class="py-3 text-end"><a href="#"
+                                                        class="btn btn-link text-charcoal p-0"><i
+                                                            class="bi bi-download"></i></a></td>
                                             </tr>
                                             <tr>
                                                 <td class="py-3 fw-bold">Oceanic Sand Sculpture</td>
                                                 <td class="py-3 text-muted">March 22, 2026</td>
-                                                <td class="py-3"><span class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span></td>
-                                                <td class="py-3 text-end"><a href="#" class="btn btn-link text-charcoal p-0"><i class="bi bi-download"></i></a></td>
+                                                <td class="py-3"><span
+                                                        class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span>
+                                                </td>
+                                                <td class="py-3 text-end"><a href="#"
+                                                        class="btn btn-link text-charcoal p-0"><i
+                                                            class="bi bi-download"></i></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -275,35 +367,40 @@
                         <h3 class="editorial-title h4 mb-4">Signed Waivers</h3>
                         <div class="tactile-card p-4">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
                                     <div>
                                         <h6 class="mb-1">General Admission Liability Waiver</h6>
                                         <small class="text-muted">Signed on May 1, 2026</small>
                                     </div>
                                     <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Download</button>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
                                     <div>
                                         <h6 class="mb-1">Birthday Party Participant Agreement</h6>
                                         <small class="text-muted">Signed on April 28, 2026</small>
                                     </div>
                                     <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Download</button>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
                                     <div>
                                         <h6 class="mb-1">Photo & Media Release Form</h6>
                                         <small class="text-muted">Signed on April 15, 2026</small>
                                     </div>
                                     <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Download</button>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
                                     <div>
                                         <h6 class="mb-1">Special Workshop Consent (Glow Room)</h6>
                                         <small class="text-muted">Signed on April 10, 2026</small>
                                     </div>
                                     <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Download</button>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
                                     <div>
                                         <h6 class="mb-1">Membership Terms & Conditions</h6>
                                         <small class="text-muted">Signed on March 1, 2026</small>
@@ -322,7 +419,8 @@
                                 <div class="dashboard-stat h-100 text-center p-4">
                                     <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-2">Total Visits</h6>
                                     <h2 class="display-5 fw-bold mb-5">12</h2>
-                                    <p class="text-success small mt-2"><i class="bi bi-arrow-up-right"></i> 20% this month</p>
+                                    <p class="text-success small mt-2"><i class="bi bi-arrow-up-right"></i> 20% this
+                                        month</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -335,16 +433,26 @@
                         </div>
                         <div class="tactile-card p-4 text-center">
                             <h6 class="mb-4 text-start">Activity Graph</h6>
-                            <div class="d-flex align-items-end justify-content-between pt-4 px-3" style="height: 200px; border-bottom: 2px solid rgba(0,0,0,0.05); gap: 10px; flex-direction: row !important;">
-                                <div class="bg-primary opacity-50 rounded-top w-100" style="height: 30%; transition: 0.3s;" title="Jan"></div>
-                                <div class="bg-primary opacity-50 rounded-top w-100" style="height: 50%; transition: 0.3s;" title="Feb"></div>
-                                <div class="bg-primary opacity-50 rounded-top w-100" style="height: 40%; transition: 0.3s;" title="Mar"></div>
-                                <div class="bg-primary opacity-75 rounded-top w-100" style="height: 80%; transition: 0.3s;" title="Apr"></div>
-                                <div class="bg-primary rounded-top w-100" style="height: 65%; transition: 0.3s; background-color: var(--color-terracotta) !important;" title="May"></div>
-                                <div class="bg-primary opacity-25 rounded-top w-100" style="height: 20%; transition: 0.3s;" title="Jun"></div>
+                            <div class="d-flex align-items-end justify-content-between pt-4 px-3"
+                                style="height: 200px; border-bottom: 2px solid rgba(0,0,0,0.05); gap: 10px; flex-direction: row !important;">
+                                <div class="bg-primary opacity-50 rounded-top w-100"
+                                    style="height: 30%; transition: 0.3s;" title="Jan"></div>
+                                <div class="bg-primary opacity-50 rounded-top w-100"
+                                    style="height: 50%; transition: 0.3s;" title="Feb"></div>
+                                <div class="bg-primary opacity-50 rounded-top w-100"
+                                    style="height: 40%; transition: 0.3s;" title="Mar"></div>
+                                <div class="bg-primary opacity-75 rounded-top w-100"
+                                    style="height: 80%; transition: 0.3s;" title="Apr"></div>
+                                <div class="bg-primary rounded-top w-100"
+                                    style="height: 65%; transition: 0.3s; background-color: var(--color-terracotta) !important;"
+                                    title="May"></div>
+                                <div class="bg-primary opacity-25 rounded-top w-100"
+                                    style="height: 20%; transition: 0.3s;" title="Jun"></div>
                             </div>
-                            <div class="d-flex justify-content-between mt-2 small text-muted px-3" style="flex-direction: row !important;">
-                                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span class="fw-bold" style="color: var(--color-terracotta);">May</span><span>Jun</span>
+                            <div class="d-flex justify-content-between mt-2 small text-muted px-3"
+                                style="flex-direction: row !important;">
+                                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span class="fw-bold"
+                                    style="color: var(--color-terracotta);">May</span><span>Jun</span>
                             </div>
                         </div>
                     </div>
@@ -354,19 +462,24 @@
                         <h3 class="editorial-title h4 mb-4">Account Settings</h3>
                         <div class="tactile-card p-4">
                             <form>
-                                <h6 class="mb-3 opacity-50 small text-uppercase letter-spacing-lg">Personal Information</h6>
+                                <h6 class="mb-3 opacity-50 small text-uppercase letter-spacing-lg">Personal Information
+                                </h6>
                                 <div class="row g-3 mb-4">
                                     <div class="col-md-6">
                                         <label class="form-label small text-muted">Full Name</label>
-                                        <input type="text" class="form-control rounded-pill px-4 bg-light border-0 py-2" value="Guest User">
+                                        <input type="text" class="form-control rounded-pill px-4 bg-light border-0 py-2"
+                                            value="Guest User">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label small text-muted">Email Address</label>
-                                        <input type="email" class="form-control rounded-pill px-4 bg-light border-0 py-2" value="guest@example.com">
+                                        <input type="email"
+                                            class="form-control rounded-pill px-4 bg-light border-0 py-2"
+                                            value="guest@example.com">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label small text-muted">Phone Number</label>
-                                        <input type="tel" class="form-control rounded-pill px-4 bg-light border-0 py-2" value="+1 (555) 123-4567">
+                                        <input type="tel" class="form-control rounded-pill px-4 bg-light border-0 py-2"
+                                            value="+1 (555) 123-4567">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label small text-muted">Preferred Language</label>
@@ -379,26 +492,34 @@
                                     </div>
                                 </div>
 
-                                <h6 class="mb-3 opacity-50 small text-uppercase letter-spacing-lg">Notification Preferences</h6>
+                                <h6 class="mb-3 opacity-50 small text-uppercase letter-spacing-lg">Notification
+                                    Preferences</h6>
                                 <div class="mb-4">
                                     <div class="form-check form-switch mb-2">
                                         <input class="form-check-input" type="checkbox" id="notifyEmail" checked>
-                                        <label class="form-check-label small" for="notifyEmail">Email notifications for new bookings</label>
+                                        <label class="form-check-label small" for="notifyEmail">Email notifications for
+                                            new bookings</label>
                                     </div>
                                     <div class="form-check form-switch mb-2">
                                         <input class="form-check-input" type="checkbox" id="notifySMS">
-                                        <label class="form-check-label small" for="notifySMS">SMS alerts for session reminders</label>
+                                        <label class="form-check-label small" for="notifySMS">SMS alerts for session
+                                            reminders</label>
                                     </div>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="notifyMarketing">
-                                        <label class="form-check-label small" for="notifyMarketing">Receive marketing & promotion updates</label>
+                                        <label class="form-check-label small" for="notifyMarketing">Receive marketing &
+                                            promotion updates</label>
                                     </div>
                                 </div>
 
                                 <h6 class="mb-3 opacity-50 small text-uppercase letter-spacing-lg">Security</h6>
                                 <div class="mb-4">
-                                    <button type="button" class="btn btn-sm btn-outline-terracotta rounded-pill px-4 py-2">Change Password</button>
-                                    <button type="button" class="btn btn-sm btn-link text-muted ms-2 small text-decoration-none">Two-Factor Authentication</button>
+                                    <button type="button"
+                                        class="btn btn-sm btn-outline-terracotta rounded-pill px-4 py-2">Change
+                                        Password</button>
+                                    <button type="button"
+                                        class="btn btn-sm btn-link text-muted ms-2 small text-decoration-none">Two-Factor
+                                        Authentication</button>
                                 </div>
 
                                 <hr class="my-4 opacity-10">
@@ -413,55 +534,86 @@
         </div>
     </main>
 
+    <!-- Mobile Offcanvas Menu (Outside transformed container) -->
+    <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="dashboardMenuMobile"
+        aria-labelledby="dashboardMenuMobileLabel" style="background-color: var(--color-off-white);">
+        <div class="offcanvas-header border-bottom opacity-75">
+            <h5 class="offcanvas-title editorial-title" id="dashboardMenuMobileLabel">Dashboard Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#dashboardMenuMobile"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-4">
+            <ul class="list-unstyled text-start mb-0 dashboard-tabs w-100">
+                <li class="mb-3"><a href="#" class="tab-link text-decoration-none text-charcoal fw-bold"
+                        data-target="profile"><i class="bi bi-person me-3 opacity-50"></i> My Profile</a></li>
+                <li class="mb-3"><a href="#"
+                        class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100"
+                        data-target="bookings"><i class="bi bi-calendar-event me-3 opacity-50"></i> My Bookings</a></li>
+                <li class="mb-3"><a href="#"
+                        class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100"
+                        data-target="waivers"><i class="bi bi-file-earmark-check me-3 opacity-50"></i> Signed
+                        Waivers</a></li>
+                <li class="mb-3"><a href="#"
+                        class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100"
+                        data-target="analytics"><i class="bi bi-graph-up me-3 opacity-50"></i> Activity Analytics</a>
+                </li>
+                <li class="mb-3"><a href="#"
+                        class="tab-link text-decoration-none text-charcoal opacity-75 hover-opacity-100"
+                        data-target="settings"><i class="bi bi-gear me-3 opacity-50"></i> Settings</a></li>
+                <li class="mt-5"><a href="index.html" class="text-decoration-none text-terracotta fw-bold"><i
+                            class="bi bi-box-arrow-right me-3"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const tabLinks = document.querySelectorAll('.tab-link');
-            const tabContents = document.querySelectorAll('.tab-content-panel');
+            const tabPanels = document.querySelectorAll('.tab-content-panel');
+            const mobileOffcanvasEl = document.getElementById('dashboardMenuMobile');
+            let mobileOffcanvas = null;
+            if (mobileOffcanvasEl) {
+                mobileOffcanvas = new bootstrap.Offcanvas(mobileOffcanvasEl);
+            }
 
             tabLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const targetId = link.getAttribute('data-target');
-                    
-                    // Reset all links
-                    tabLinks.forEach(l => {
-                        l.classList.remove('fw-bold');
-                        l.classList.add('opacity-75', 'hover-opacity-100');
-                    });
-                    
-                    // Set active link
-                    link.classList.add('fw-bold');
-                    link.classList.remove('opacity-75', 'hover-opacity-100');
+                    tabLinks.forEach(l => l.classList.remove('fw-bold'));
+                    tabLinks.forEach(l => l.classList.add('opacity-75'));
+                    tabPanels.forEach(p => p.style.display = 'none');
 
-                    // Hide all contents
-                    tabContents.forEach(content => {
-                        content.style.display = 'none';
+                    const targetId = link.getAttribute('data-target');
+
+                    // Add active to current (find both mobile and desktop instances of the same link)
+                    const allMatchingLinks = document.querySelectorAll(`.tab-link[data-target="${targetId}"]`);
+                    allMatchingLinks.forEach(matchingLink => {
+                        matchingLink.classList.add('fw-bold');
+                        matchingLink.classList.remove('opacity-75');
                     });
-                    
-                    // Show target content
-                    const targetContent = document.getElementById(targetId);
-                    if (targetContent) {
-                        targetContent.style.display = 'block';
-                        // Re-trigger reveal animation if present
-                        if(targetContent.classList.contains('reveal-item')) {
-                            targetContent.classList.remove('active');
-                            setTimeout(() => targetContent.classList.add('active'), 50);
-                        }
+
+                    // Show target panel
+                    const targetPanel = document.getElementById(targetId);
+                    if (targetPanel) {
+                        targetPanel.style.display = 'block';
+                    }
+
+                    // Close offcanvas menu on mobile if it is open
+                    if (mobileOffcanvasEl && mobileOffcanvasEl.classList.contains('show')) {
+                        mobileOffcanvas.hide();
                     }
                 });
             });
-            
+
             // Trigger animation for the initial visible tab
             const initialTab = document.getElementById('profile');
-            if(initialTab && initialTab.classList.contains('reveal-item')) {
+            if (initialTab && initialTab.classList.contains('reveal-item')) {
                 setTimeout(() => initialTab.classList.add('active'), 100);
             }
         });
     </script>
 </body>
-</html>
 
+</html>

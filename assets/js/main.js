@@ -1,6 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ==============================================
-    // 1. GRAIN OVERLAY
+    // 1. ACTIVE NAVIGATION HIGHLIGHTING
+    // ==============================================
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const dropdownLinks = document.querySelectorAll('.dropdown-menu .dropdown-item');
+    
+    // Clear all active classes first
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+    });
+    
+    // Helper function to extract filename from path
+    const getFilename = (path) => {
+        const parts = path.split('/');
+        const filename = parts.pop() || parts.pop() || '';
+        return filename === '' ? 'index.html' : filename;
+    };
+    
+    const currentFilename = getFilename(currentPath);
+    
+    // Check main nav links
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref) {
+            const linkFilename = getFilename(linkHref);
+            if (linkFilename === currentFilename) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
+        }
+    });
+    
+    // Check dropdown links and highlight parent if needed
+    dropdownLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref) {
+            const linkFilename = getFilename(linkHref);
+            if (linkFilename === currentFilename) {
+                link.classList.add('active');
+                const parentDropdown = link.closest('.nav-item.dropdown');
+                if (parentDropdown) {
+                    const parentLink = parentDropdown.querySelector('.nav-link.dropdown-toggle');
+                    if (parentLink) {
+                        parentLink.classList.add('active');
+                        parentLink.setAttribute('aria-current', 'page');
+                    }
+                }
+            }
+        }
+    });
+
+    // ==============================================
+    // 2. GRAIN OVERLAY
     // ==============================================
     const grain = document.createElement('div');
     grain.className = 'grain-overlay';
