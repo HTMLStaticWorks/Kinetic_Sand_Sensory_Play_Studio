@@ -387,6 +387,16 @@ footer a:hover img[src*="logo.png"] {
     font-weight: 600;
 }
 
+.nav-link.active:hover {
+    color: var(--color-terracotta) !important;
+}
+
+.dropdown-item.active:hover {
+    background-color: var(--color-terracotta);
+    color: var(--color-off-white);
+    transform: translateX(5px);
+}
+
 /* Tactile Dropdowns */
 .dropdown-menu {
     background-color: var(--color-off-white);

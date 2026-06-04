@@ -58,6 +58,19 @@ body.dark-mode {
     opacity: 1;
 }
 
+.dark-mode .nav-link.active {
+    color: #CC7C6B !important;
+}
+
+.dark-mode .nav-link.active:hover {
+    color: #CC7C6B !important;
+}
+
+.dark-mode .dropdown-item.active:hover {
+    background-color: #CC7C6B;
+    color: #FBF9F6;
+}
+
 .dark-mode .tactile-card {
     background-color: rgba(251, 249, 246, 0.03);
     border-color: rgba(251, 249, 246, 0.05);
