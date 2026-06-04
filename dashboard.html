@@ -42,6 +42,19 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
         }
 
+        /* Style tables for better spacing */
+        .table-responsive table {
+            min-width: 500px;
+        }
+        .table-responsive th,
+        .table-responsive td {
+            white-space: nowrap;
+            padding: 1rem 0.75rem;
+        }
+        .table-responsive {
+            border-radius: 1rem;
+        }
+
         /* Hide desktop dashboard menu on screens smaller than 1000px */
         @media (max-width: 1000px) {
             .dashboard-sidebar-desktop {
@@ -87,6 +100,12 @@
             .dashboard-tabs li {
                 margin-bottom: 0.5rem !important;
             }
+            
+            .table-responsive th,
+            .table-responsive td {
+                font-size: 0.875rem;
+                padding: 0.75rem 0.5rem;
+            }
 
             .dashboard-tabs .mt-5 {
                 margin-top: 1.5rem !important;
@@ -125,16 +144,16 @@
 <body>
 
     <div class="position-fixed top-0 end-0 p-4 z-3 d-flex gap-2 align-items-center">
-        <button class="btn-toggle-tactile shadow-sm d-lg-none" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#dashboardMenuMobile" aria-controls="dashboardMenuMobile"
-            aria-label="Toggle Dashboard Menu">
-            <i class="bi bi-list fs-5"></i>
-        </button>
         <button class="btn-toggle-tactile shadow-sm" id="theme-toggle" aria-label="Toggle theme">
             <i class="bi bi-moon-fill"></i>
         </button>
         <button class="btn-toggle-tactile text-btn shadow-sm" id="rtl-toggle" aria-label="Toggle RTL">
             RTL
+        </button>
+        <button class="btn-toggle-tactile shadow-sm d-lg-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#dashboardMenuMobile" aria-controls="dashboardMenuMobile"
+            aria-label="Toggle Dashboard Menu">
+            <i class="bi bi-list fs-5"></i>
         </button>
     </div>
 
@@ -194,7 +213,7 @@
                                 <div class="dashboard-stat h-100 d-flex flex-column">
                                     <h6 class="text-uppercase small letter-spacing-lg opacity-50 mb-3">Next Session</h6>
                                     <h4 class="editorial-title mb-0">Creative Sand Lab</h4>
-                                    <p class="text-muted small mt-2">May 24, 2026 at 2:00 PM</p>
+                                    <p class="text-muted small mt-2">May 24, 2:00 PM</p>
                                     <div class="mt-auto pt-3">
                                         <a href="#"
                                             class="btn btn-link text-terracotta p-0 text-decoration-none small fw-bold">Reschedule
@@ -233,7 +252,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="py-3 fw-bold">Texture Discovery Zone</td>
-                                                <td class="py-3 text-muted">May 10, 2026</td>
+                                                <td class="py-3 text-muted">May 10</td>
                                                 <td class="py-3"><span
                                                         class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span>
                                                 </td>
@@ -243,7 +262,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="py-3 fw-bold">Glow Sensory Room</td>
-                                                <td class="py-3 text-muted">April 15, 2026</td>
+                                                <td class="py-3 text-muted">Apr 15</td>
                                                 <td class="py-3"><span
                                                         class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span>
                                                 </td>
@@ -294,7 +313,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="py-3 fw-bold">Creative Sand Lab</td>
-                                                <td class="py-3 text-muted">May 24, 2026 at 2:00 PM</td>
+                                                <td class="py-3 text-muted">May 24, 2:00 PM</td>
                                                 <td class="py-3"><span
                                                         class="badge rounded-pill px-3 py-2 bg-peach text-charcoal border-0">Confirmed</span>
                                                 </td>
@@ -327,7 +346,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="py-3 fw-bold">Texture Discovery Zone</td>
-                                                <td class="py-3 text-muted">May 10, 2026</td>
+                                                <td class="py-3 text-muted">May 10</td>
                                                 <td class="py-3"><span
                                                         class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span>
                                                 </td>
@@ -337,7 +356,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="py-3 fw-bold">Glow Sensory Room</td>
-                                                <td class="py-3 text-muted">April 15, 2026</td>
+                                                <td class="py-3 text-muted">Apr 15</td>
                                                 <td class="py-3"><span
                                                         class="badge rounded-pill px-3 py-2 bg-light text-charcoal border">Completed</span>
                                                 </td>
@@ -387,7 +406,7 @@
                                     class="list-group-item d-flex justify-content-between align-items-center py-3 bg-transparent border-bottom">
                                     <div>
                                         <h6 class="mb-1">Photo & Media Release Form</h6>
-                                        <small class="text-muted">Signed on April 15, 2026</small>
+                                        <small class="text-muted">Signed on Apr 15</small>
                                     </div>
                                     <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Download</button>
                                 </li>
