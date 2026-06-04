@@ -33,7 +33,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <img src="assets/images/logo.png" alt="Kinetic Studio Logo" height="45">
                 </a>
@@ -47,15 +47,15 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                            <a class="nav-link active dropdown-toggle" href="#" id="homeDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">Home <i class="bi bi-chevron-down"></i></a>
                             <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
                                 <li><a class="dropdown-item" href="index.html">Home 1</a></li>
                                 <li><a class="dropdown-item" href="index2.html">Home 2</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                            <a class="nav-link" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="experiences.html">Experiences</a>
@@ -68,7 +68,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+                                data-bs-toggle="dropdown" aria-expanded="false">Support <i class="bi bi-chevron-down"></i></a>
                             <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="supportDropdown">
                                 <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
                                 <li><a class="dropdown-item" href="waiver.html">Waiver</a></li>
@@ -108,13 +108,10 @@
                 </div>
                 <div class="row align-items-center g-5">
                     <div class="col-md-6 reveal-item">
-                        <p class="mb-4">Welcome to the Kinetic Sand & Sensory Play Studio, a unique space dedicated to
-                            fostering creativity, tactile exploration, and mindful play. We believe in the power of
-                            sensory experiences to engage the mind, soothe the spirit, and inspire imagination in
-                            individuals of all ages.</p>
-                        <p>Our studio is designed as a premium, immersive environment where the magic of kinetic sand
-                            comes to life. We offer a curated selection of tools, textures, and guided activities that
-                            encourage artistic expression.</p>
+                        <h2 class="display-5 fw-bold mb-5 reveal-item">Story</h2>
+                        <p class="mb-4">Welcome to the Kinetic Sand & Sensory Play Studio, a space dedicated to fostering creativity, tactile exploration, and mindful play. We are a multi-purpose studio focused on teaching sand art, offering immersive sensory workshops, hosting unforgettable parties, and providing a curated boutique of premium kinetic products.</p>
+                        <p class="mb-4">Our studio is designed as a premium environment where the magic of kinetic sand comes to life. We guide individuals through various forms of sand art, including sand sculpting, kinetic sand molding, layered sand bottles, and sand painting.</p>
+                        <p>We believe in the power of sensory experiences for everyone. Our studio caters to various age groups with specifically designed activities for <strong>Toddlers (Ages 2-4)</strong>, <strong>Kids (Ages 5-12)</strong>, and <strong>Teens & Adults (Ages 13+)</strong>.</p>
                     </div>
                     <div class="col-md-6 reveal-item">
                         <div class="organic-shape shadow-lg">
@@ -129,7 +126,7 @@
         <!-- Our Philosophy -->
         <section id="our-philosophy" class="section-padding" style="background-color: var(--color-peach);">
             <div class="container text-center">
-                <h2 class="display-medium editorial-title mb-4 reveal-item">Our Philosophy</h2>
+                <h2 class="display-5 fw-bold mb-5 reveal-item">Our Philosophy</h2>
                 <p class="lead text-muted mb-5 reveal-item">We champion a holistic approach to play and learning,
                     emphasizing sensory engagement.</p>
                 <div class="row g-4">
@@ -187,7 +184,7 @@
         <section id="team" class="section-padding bg-white">
             <div class="container">
                 <div class="text-center mb-5 reveal-item">
-                    <h2 class="display-medium editorial-title mb-4">Architects <br>of Touch</h2>
+                    <h2 class="display-5 fw-bold mb-5">Architects <br>of Touch</h2>
                     <p class="lead text-muted">Meet the passionate sensory experts who guide your journey.</p>
                 </div>
                 <div class="row g-5 justify-content-center">
@@ -226,10 +223,10 @@
 
 
     <footer class="section-padding" style="background-color: var(--color-charcoal); color: var(--color-off-white);">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <img src="assets/images/logo.png" alt="Kinetic Studio Logo" height="40" class="mb-4">
+                    <img src="assets/images/logo.png" alt="Kinetic Studio Logo" height="45" class="mb-4">
                     <p class="opacity-75 small">Shape Imagination. Touch Creativity. Where Texture Becomes Play.</p>
                     <div class="social-links mt-4">
                         <a href="#" class="text-off-white me-4 opacity-50 hover-opacity-100 transition-smooth"><i
@@ -284,10 +281,10 @@
             </div>
             <hr class="my-5 opacity-10">
             <div class="row align-items-center opacity-50 small">
-                <div class="col-md-6 text-center text-md-start">
+                <div class="col-md-6">
                     <p class="mb-0">&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
+                <div class="col-md-6">
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item me-4"><a href="#" class="text-decoration-none"
                                 style="color: var(--color-off-white);">Privacy Policy</a></li>

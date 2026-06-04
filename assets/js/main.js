@@ -1,27 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Inject Grain Overlay & Smooth Scroll Container
+    // ==============================================
+    // 1. GRAIN OVERLAY
+    // ==============================================
     const grain = document.createElement('div');
     grain.className = 'grain-overlay';
     document.body.appendChild(grain);
 
-    // 2. State Management
+    // ==============================================
+    // 2. THEME & RTL STATE MANAGEMENT
+    // ==============================================
     const themeToggle = document.getElementById('theme-toggle');
     const rtlToggle = document.getElementById('rtl-toggle');
     const navbar = document.querySelector('.navbar');
     
-    // Initial State Application
+    // Load saved states from localStorage
     const currentTheme = localStorage.getItem('theme') || 'light';
     const currentDir = localStorage.getItem('dir') || 'ltr';
 
+    // Apply initial theme
     if (currentTheme === 'dark') {
         document.body.classList.add('dark-mode');
     }
     
+    // Apply initial RTL direction
     if (currentDir === 'rtl') {
-        document.documentElement.setAttribute('dir', 'rtl');
+        document.documentElement.setAttribute('dir', currentDir);
     }
 
-    // Theme logic
+    // Update theme icon based on current mode
     const updateThemeIcon = (isDark) => {
         const icon = themeToggle?.querySelector('i');
         if (icon) {
@@ -32,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply initial icon
     updateThemeIcon(currentTheme === 'dark');
     
+    // Theme toggle handler
     themeToggle?.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const isDark = document.body.classList.contains('dark-mode');
@@ -39,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateThemeIcon(isDark);
     });
 
-    // RTL logic
+    // RTL toggle handler
     rtlToggle?.addEventListener('click', () => {
         const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
         const newDir = isRTL ? 'ltr' : 'rtl';
@@ -47,7 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('dir', newDir);
     });
 
-    // 3. Navbar Scroll State
+    // ==============================================
+    // 3. NAVBAR SCROLL STATE
+    // ==============================================
+    const navbarLogo = document.querySelector('.navbar-brand img');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar?.classList.add('scrolled');
@@ -56,7 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Digital Sand Physics (Canvas)
+    // ==============================================
+    // 4. SANDS PARTICLE/DOTS ANIMATION (DISABLED)
+    // ==============================================
+    
+    /*
     class SandParticle {
         constructor(canvas) {
             this.canvas = canvas;
@@ -109,19 +123,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Global Digital Sand Physics Overlay
-    const globalSandCanvas = document.createElement('canvas');
-    globalSandCanvas.id = 'global-sand-particles';
-    globalSandCanvas.style.position = 'fixed';
-    globalSandCanvas.style.top = '0';
-    globalSandCanvas.style.left = '0';
-    globalSandCanvas.style.width = '100vw';
-    globalSandCanvas.style.height = '100vh';
-    globalSandCanvas.style.pointerEvents = 'none';
-    globalSandCanvas.style.zIndex = '9998'; // Above content, below grain
-    document.body.appendChild(globalSandCanvas);
-
     const initGlobalSandEffect = () => {
+        const globalSandCanvas = document.createElement('canvas');
+        globalSandCanvas.id = 'global-sand-particles';
+        globalSandCanvas.style.position = 'fixed';
+        globalSandCanvas.style.top = '0';
+        globalSandCanvas.style.left = '0';
+        globalSandCanvas.style.width = '100vw';
+        globalSandCanvas.style.height = '100vh';
+        globalSandCanvas.style.pointerEvents = 'none';
+        globalSandCanvas.style.zIndex = '9998';
+        document.body.appendChild(globalSandCanvas);
+
         const canvas = globalSandCanvas;
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -131,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             particles = [];
-            const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 10000), 300); // Scale with screen, max 300
+            const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 10000), 300);
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new SandParticle(canvas));
             }
@@ -142,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mouse.y = e.clientY;
         });
 
-        // Touch support for mobile
         window.addEventListener('touchmove', (e) => {
             if (e.touches.length > 0) {
                 mouse.x = e.touches[0].clientX;
@@ -165,8 +177,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     initGlobalSandEffect();
+    */
 
-    // 5. Reveal Animations
+    // ==============================================
+    // 5. REVEAL ANIMATIONS
+    // ==============================================
+    
+    /**
+     * Intersection Observer for scroll reveal animations
+     * Fades in elements as they come into view
+     */
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -177,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
+    // Apply reveal animation to all .reveal-item elements
     document.querySelectorAll('.reveal-item').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -184,10 +205,15 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
  
-    // 6. Back to Top Button (Excluded on specific pages)
+    // ==============================================
+    // 6. BACK TO TOP BUTTON
+    // ==============================================
+    
+    // Pages where back-to-top button should NOT appear
     const excludedPages = ['dashboard.html', 'login.html', 'register.html'];
     const isExcluded = excludedPages.some(page => window.location.pathname.includes(page));
 
+    // Only create button if not on excluded page
     if (!isExcluded) {
         const backToTopBtn = document.createElement('button');
         backToTopBtn.className = 'back-to-top';
@@ -195,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backToTopBtn.setAttribute('aria-label', 'Back to top');
         document.body.appendChild(backToTopBtn);
 
+        // Show/hide button based on scroll position
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('visible');
@@ -203,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Smooth scroll to top when clicked
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,

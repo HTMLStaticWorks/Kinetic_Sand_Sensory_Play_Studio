@@ -132,31 +132,64 @@ h6,
 
 /* Premium Typography Hierarchy */
 .editorial-title {
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.04em;
     line-height: 0.95;
     color: var(--color-charcoal);
 }
 
+/* Heading Hierarchy */
+h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 500;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 500;
+}
+
+h5 {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 500;
+}
+
+h6 {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+}
+
 /* Hero section subtext visibility fix */
 .hero-section .lead,
 main>section:first-of-type .lead {
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     opacity: 1 !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .display-large {
-    font-size: clamp(2.2rem, 10vw, 8rem);
+    font-size: clamp(2.2rem, 10vw, 6rem);
+    font-weight: 500;
 }
 
 .display-medium {
     font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 500;
 }
 
 /* Buttons - Pressure Responsive */
 .btn-tactile {
-    background-color: var(--color-charcoal);
+    background-color: var(--color-terracotta);
     color: var(--color-off-white);
     padding: 1.2rem 2.5rem;
     border-radius: 100px;
@@ -166,13 +199,14 @@ main>section:first-of-type .lead {
     transition: var(--transition-physical);
     display: inline-block;
     text-decoration: none;
+    box-shadow: 0 10px 30px rgba(204, 124, 107, 0.3);
 }
 
 .btn-tactile:hover {
-    background-color: var(--color-terracotta);
+    background-color: var(--color-charcoal);
     color: var(--color-off-white);
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(204, 124, 107, 0.3);
+    box-shadow: 0 10px 30px rgba(54, 69, 79, 0.3);
 }
 
 .btn-tactile-outline {
@@ -294,12 +328,6 @@ main>section:first-of-type .lead {
     /* Ensure it stays above everything */
 }
 
-.navbar.scrolled {
-    background: rgba(251, 249, 246, 0.98);
-    backdrop-filter: blur(20px);
-    padding: 0.8rem 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-}
 
 .navbar-brand {
     font-weight: 800;
@@ -308,18 +336,17 @@ main>section:first-of-type .lead {
     color: var(--color-charcoal) !important;
 }
 
-.navbar-brand img {
-    transition: var(--transition-physical);
+.navbar-brand img,
+footer img[src*="logo.png"] {
+    transition: var(--transition-smooth);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
     max-width: 200px;
+    background-color: rgba(251, 249, 246, 0.9);
 }
 
-.navbar-brand:hover img {
+.navbar-brand:hover img,
+footer a:hover img[src*="logo.png"] {
     transform: scale(1.05);
-}
-
-footer img[src*="logo.png"] {
-    max-width: 180px;
 }
 
 .nav-link {
@@ -328,6 +355,14 @@ footer img[src*="logo.png"] {
     color: var(--color-charcoal) !important;
     margin: 0 0.5rem;
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Hide Bootstrap's default dropdown arrow */
+.nav-link.dropdown-toggle::after {
+    display: none;
 }
 
 .nav-link::after {
@@ -449,8 +484,16 @@ footer img[src*="logo.png"] {
         text-align: center !important;
     }
 
+    footer.section-padding {
+        text-align: left !important;
+    }
+
     .row {
         justify-content: center !important;
+    }
+
+    footer .row {
+        justify-content: flex-start !important;
     }
 
     .btn-tactile {
@@ -637,6 +680,7 @@ footer img[src*="logo.png"] {
     justify-content: space-between;
     z-index: 1105;
     padding: 0;
+    margin-right: 15px;
     background: transparent;
     border: none;
 }
@@ -1079,4 +1123,24 @@ footer a:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Birthday Section Styles */
+.birthday-section {
+    background: url('../images/glow-sensory-room.jpg') center/cover no-repeat;
+}
+
+.birthday-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(251, 249, 246, 0.85);
+    z-index: 1;
+}
+
+/* Dark Mode Override for Birthday Section */
+.dark-mode .birthday-overlay {
+    background: rgba(26, 26, 26, 0.85);
 }

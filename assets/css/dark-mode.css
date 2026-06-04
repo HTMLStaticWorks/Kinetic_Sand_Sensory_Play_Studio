@@ -1,8 +1,8 @@
 /* Premium Dark Mode Overrides */
 
 body.dark-mode {
-    background-color: var(--color-off-white);
-    color: var(--color-charcoal);
+    background-color: #1A1A1A;
+    color: #FBF9F6;
 }
 
 .dark-mode h1,
@@ -13,7 +13,7 @@ body.dark-mode {
 .dark-mode h6,
 .dark-mode .editorial-title,
 .dark-mode .navbar-brand {
-    color: var(--color-charcoal) !important;
+    color: #FBF9F6 !important;
 }
 
 /* Ensure headings on dark backgrounds remain light in dark mode */
@@ -38,19 +38,18 @@ body.dark-mode {
 
 .dark-mode img[src*="logo.png"] {
     filter: invert(1) brightness(1.5) contrast(1.1);
+    background-color: rgba(26, 26, 26, 0.9) !important;
 }
+
 
 .dark-mode .navbar {
     background-color: rgba(26, 26, 26, 0.9) !important;
     border-bottom-color: rgba(251, 249, 246, 0.05);
 }
 
-.dark-mode .navbar.scrolled {
-    background-color: rgba(20, 20, 20, 0.98) !important;
-}
 
 .dark-mode .nav-link {
-    color: var(--color-charcoal) !important;
+    color: #FBF9F6 !important;
     opacity: 0.7;
 }
 
@@ -67,8 +66,8 @@ body.dark-mode {
 }
 
 .dark-mode .btn-tactile {
-    background-color: var(--color-charcoal);
-    color: var(--color-off-white);
+    background-color: #CC7C6B;
+    color: #FBF9F6;
 }
 
 .dark-mode .btn-tactile:active {
@@ -83,24 +82,24 @@ body.dark-mode {
 }
 
 .dark-mode .text-muted {
-    color: var(--color-charcoal) !important;
+    color: #FBF9F6 !important;
     opacity: 0.6;
 }
 
 .dark-mode .form-control {
     background-color: rgba(251, 249, 246, 0.03);
     border-color: rgba(251, 249, 246, 0.1);
-    color: var(--color-charcoal);
+    color: #FBF9F6;
 }
 
 .dark-mode .form-label,
 .dark-mode .form-check-label {
-    color: var(--color-charcoal) !important;
+    color: #FBF9F6 !important;
 }
 
 .dark-mode .form-control:focus {
     background-color: rgba(251, 249, 246, 0.05);
-    border-color: var(--color-charcoal);
+    border-color: #FBF9F6;
 }
 
 .dark-mode .accordion-item {
@@ -110,7 +109,7 @@ body.dark-mode {
 
 .dark-mode .accordion-button {
     background-color: transparent;
-    color: var(--color-charcoal);
+    color: #FBF9F6;
 }
 
 .dark-mode .accordion-button::after {
@@ -119,32 +118,32 @@ body.dark-mode {
 
 .dark-mode .accordion-button:not(.collapsed) {
     background-color: rgba(251, 249, 246, 0.03);
-    color: var(--color-charcoal);
+    color: #FBF9F6;
 }
 
 .dark-mode .accordion-body {
-    color: var(--color-charcoal) !important;
+    color: #FBF9F6 !important;
 }
 
 .dark-mode hr {
     opacity: 0.1;
-    background-color: var(--color-charcoal);
+    background-color: #FBF9F6;
 }
 
 .dark-mode #theme-toggle i {
-    color: var(--color-charcoal);
+    color: #FBF9F6;
 }
 
 .dark-mode .btn-toggle-tactile {
     background: rgba(251, 249, 246, 0.1);
-    color: var(--color-charcoal);
-    border-color: rgba(var(--color-charcoal-rgb), 0.2);
+    color: #FBF9F6;
+    border-color: rgba(251, 249, 246, 0.2);
 }
 
 .dark-mode .btn-toggle-tactile:hover {
-    background: var(--color-terracotta);
-    color: var(--color-off-white);
-    border-color: var(--color-terracotta);
+    background: #CC7C6B;
+    color: #FBF9F6;
+    border-color: #CC7C6B;
 }
 
 /* Fix footer and explicit text colors in dark mode because sections are forced to dark background */
@@ -152,20 +151,20 @@ body.dark-mode {
 .dark-mode footer .editorial-title,
 .dark-mode footer a,
 .dark-mode .text-off-white {
-    color: var(--color-charcoal) !important;
+    color: #FBF9F6 !important;
 }
 
 .dark-mode footer a:hover {
-    color: var(--color-terracotta) !important;
+    color: #CC7C6B !important;
 }
 
 /* Hamburger & Close Icon Visibility in Dark Mode */
 .dark-mode .hamburger-line {
-    background-color: var(--color-charcoal) !important;
+    background-color: #FBF9F6 !important;
 }
 
 .dark-mode .navbar-toggler:not(.collapsed) .hamburger-line {
-    background-color: var(--color-charcoal) !important;
+    background-color: #FBF9F6 !important;
 }
 
 /* Organic Shape Visibility & Glow Polish */
@@ -177,12 +176,12 @@ body.dark-mode {
 }
 
 .dark-mode .organic-shape:hover {
-    border-color: var(--color-terracotta) !important;
+    border-color: #CC7C6B !important;
     box-shadow: 0 0 30px rgba(204, 124, 107, 0.2), 0 15px 40px rgba(0, 0, 0, 0.6) !important;
 }
 
 .dark-mode .organic-shape i {
-    color: var(--color-peach) !important;
+    color: #FADCD2 !important;
     filter: drop-shadow(0 0 8px rgba(250, 220, 210, 0.4));
 }
 
@@ -200,38 +199,50 @@ body.dark-mode {
 
 .dark-mode .table td, 
 .dark-mode .table th {
-    color: var(--color-charcoal) !important;
+    color: #FBF9F6 !important;
 }
 
 .dark-mode .badge.bg-light {
     background-color: rgba(251, 249, 246, 0.05) !important;
     border-color: rgba(251, 249, 246, 0.1) !important;
-    color: var(--color-charcoal) !important;
+    color: #FBF9F6 !important;
 }
 
 .dark-mode .badge.bg-peach {
-    background-color: var(--color-peach) !important;
+    background-color: #FADCD2 !important;
     color: #36454F !important;
     border: none !important;
 }
 
 .dark-mode .btn-outline-terracotta {
-    border-color: var(--color-terracotta) !important;
-    color: var(--color-terracotta) !important;
+    border-color: #CC7C6B !important;
+    color: #CC7C6B !important;
 }
 
 .dark-mode .btn-outline-terracotta:hover {
-    background-color: var(--color-terracotta) !important;
+    background-color: #CC7C6B !important;
     color: #FBF9F6 !important;
 }
 /* Button Visibility Fixes */
 .dark-mode .btn-tactile-outline {
-    border: 2px solid var(--color-charcoal) !important;
-    color: var(--color-charcoal) !important;
+    border: 2px solid #FBF9F6 !important;
+    color: #FBF9F6 !important;
 }
 
 .dark-mode .btn-tactile-outline:hover {
-    background-color: var(--color-charcoal) !important;
-    color: var(--color-off-white) !important;
+    background-color: #FBF9F6 !important;
+    color: #36454F !important;
     box-shadow: 0 0 20px rgba(251, 249, 246, 0.1) !important;
+}
+
+/* Social Media Icons Contrast Fix */
+.dark-mode .btn-outline-dark {
+    border-color: rgba(251, 249, 246, 0.5) !important;
+    color: #FBF9F6 !important;
+}
+
+.dark-mode .btn-outline-dark:hover {
+    background-color: #FBF9F6 !important;
+    color: #36454F !important;
+    border-color: #FBF9F6 !important;
 }

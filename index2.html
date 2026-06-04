@@ -33,13 +33,13 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <img src="assets/images/logo.png" alt="Kinetic Studio Logo" height="45">
                 </a>
-                <button class="navbar-toggler custom-hamburger shadow-none border-0 collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-hamburger shadow-none border-0 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -48,10 +48,10 @@
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle" href="#" id="homeDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">Home</a>
+                                data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">Home <i class="bi bi-chevron-down"></i></a>
                             <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
                                 <li><a class="dropdown-item" href="index.html">Home 1</a></li>
-                                <li><a class="dropdown-item active" href="index2.html">Home 2</a></li>
+                                <li><a class="dropdown-item" href="index2.html">Home 2</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -68,7 +68,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+                                data-bs-toggle="dropdown" aria-expanded="false">Support <i class="bi bi-chevron-down"></i></a>
                             <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="supportDropdown">
                                 <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
                                 <li><a class="dropdown-item" href="waiver.html">Waiver</a></li>
@@ -100,23 +100,25 @@
     <main>
         <!-- 1. Immersive Hero Experience -->
         <section id="hero-2" class="hero-section py-5 d-flex align-items-center justify-content-center"
-            style="min-height: calc(100vh - 80px); position: relative; overflow: hidden; background-color: #1A1A1A; color: #FBF9F6;">
+            style="min-height: calc(100vh - 80px); position: relative; overflow: hidden; background: url('assets/images/glow-sensory-room.jpg') center/cover no-repeat; color: #FBF9F6;">
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 26, 26, 0.7); z-index: 1;">
+            </div>
             <canvas id="hero-particles-2"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
-            <div class="container text-center py-5 reveal-item" style="position: relative; z-index: 2;">
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;"></canvas>
+            <div class="container text-center py-5 reveal-item" style="position: relative; z-index: 3;">
                 <h1 class="display-large editorial-title mb-4" style="color: #FBF9F6;">Discover Your
                     <br>Inner Sculptor
                 </h1>
                 <p class="lead mb-5 opacity-75">A world of tactile wonder and creative exploration.</p>
-                <a href="contact.html#booking-hero" class="btn-tactile"
-                    style="background-color: #FBF9F6; color: #1A1A1A;">Book a Session</a>
+                <a href="contact.html#booking-hero" class="btn-tactile">Book a Session</a>
             </div>
         </section>
 
         <!-- 2. Sensory Experiences Overview -->
         <section id="experiences-overview" class="experiences-overview-section bg-light py-5">
             <div class="container text-center">
-                <h2 class="display-5 fw-bold mb-4">Our Unique Sensory Journeys</h2>
+                <h2 class="display-5 fw-bold mb-5">Our Unique Sensory Journeys</h2>
                 <p class="lead text-muted mb-5">From free play to guided workshops, find your perfect tactile adventure.
                 </p>
                 <div class="row g-4">
@@ -147,7 +149,7 @@
         <!-- 3. Why Choose Us -->
         <section id="why-choose-us" class="why-choose-us-section py-5">
             <div class="container">
-                <h2 class="text-center display-5 fw-bold mb-5">Why Our Studio Stands Apart</h2>
+                <h2 class="display-5 fw-bold mb-5 text-center">Why Our Studio Stands Apart</h2>
                 <div class="row g-4 text-center">
                     <div class="col-md-4">
                         <i class="bi bi-star-fill text-warning display-4 mb-3"></i>
@@ -179,7 +181,7 @@
                     <div class="col-lg-5 reveal-item">
                         <span class="text-uppercase fw-bold letter-spacing-lg text-terracotta mb-3 d-block small">The
                             Ritual of Play</span>
-                        <h2 class="display-medium editorial-title mb-4">The Sensory <br>Sanctuary</h2>
+                        <h2 class="display-5 fw-bold mb-5">The Sensory <br>Sanctuary</h2>
                         <p class="lead text-muted mb-5">Step into a space where time slows down. Our Sanctuary is
                             designed for those who seek the meditative qualities of tactile creation. It's not just
                             about what you make, but how it makes you feel.</p>
@@ -228,7 +230,7 @@
             <div class="container">
                 <div class="row align-items-center g-5">
                     <div class="col-md-6 reveal-item">
-                        <h2 class="display-medium editorial-title mb-4">The Physics <br>of Flow</h2>
+                        <h2 class="display-5 fw-bold mb-5">The Physics <br>of Flow</h2>
                         <p class="lead text-muted mb-4">Discover the scientific magic behind the material. Kinetic sand
                             isn't just play—it's fluid dynamics in your hands.</p>
                         <div class="tactile-card p-4 mb-4" style="background: rgba(255,255,255,0.4); border: none;">
@@ -258,7 +260,7 @@
         <section id="pulse" class="section-padding bg-white">
             <div class="container">
                 <div class="text-center mb-5 reveal-item">
-                    <h2 class="display-medium editorial-title mb-4">Studio Pulse</h2>
+                    <h2 class="display-5 fw-bold mb-5">Studio Pulse</h2>
                     <p class="lead text-muted">Join the community. See what’s flowing at the studio right now.</p>
                 </div>
                 <div class="row g-3">
@@ -293,10 +295,10 @@
 
 
     <footer class="section-padding" style="background-color: var(--color-charcoal); color: var(--color-off-white);">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <img src="assets/images/logo.png" alt="Kinetic Studio Logo" height="40" class="mb-4">
+                    <img src="assets/images/logo.png" alt="Kinetic Studio Logo" height="45" class="mb-4">
                     <p class="opacity-75 small">Shape Imagination. Touch Creativity. Where Texture Becomes Play.</p>
                     <div class="social-links mt-4">
                         <a href="#" class="text-off-white me-4 opacity-50 hover-opacity-100 transition-smooth"><i
@@ -351,10 +353,10 @@
             </div>
             <hr class="my-5 opacity-10">
             <div class="row align-items-center opacity-50 small">
-                <div class="col-md-6 text-center text-md-start">
+                <div class="col-md-6">
                     <p class="mb-0">&copy; 2026 Kinetic Sand & Sensory Play Studio. All rights reserved.</p>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
+                <div class="col-md-6">
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item me-4"><a href="#" class="text-decoration-none"
                                 style="color: var(--color-off-white);">Privacy Policy</a></li>

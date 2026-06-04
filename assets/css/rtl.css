@@ -18,17 +18,27 @@ html[dir="rtl"] .me-auto {
     margin-right: 0 !important;
 }
 
-html[dir="rtl"] .ms-lg-3,
-html[dir="rtl"] .ms-lg-2 {
-    margin-left: 0 !important;
-    margin-right: 1rem !important;
-}
+html[dir="rtl"] .me-lg-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+html[dir="rtl"] .me-lg-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+html[dir="rtl"] .me-lg-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+html[dir="rtl"] .me-lg-4 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+html[dir="rtl"] .me-lg-5 { margin-left: 3rem !important; margin-right: 0 !important; }
 
-html[dir="rtl"] .text-md-start {
+html[dir="rtl"] .ms-lg-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+html[dir="rtl"] .ms-lg-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+html[dir="rtl"] .ms-lg-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+html[dir="rtl"] .ms-lg-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+html[dir="rtl"] .ms-lg-5 { margin-right: 3rem !important; margin-left: 0 !important; }
+
+html[dir="rtl"] .text-sm-start,
+html[dir="rtl"] .text-md-start,
+html[dir="rtl"] .text-lg-start {
     text-align: right !important;
 }
 
-html[dir="rtl"] .text-md-end {
+html[dir="rtl"] .text-sm-end,
+html[dir="rtl"] .text-md-end,
+html[dir="rtl"] .text-lg-end {
     text-align: left !important;
 }
 
@@ -112,4 +122,46 @@ html[dir="rtl"] .dropdown-item:hover {
 html[dir="rtl"] .navbar-brand {
     margin-right: 0;
     margin-left: 1rem;
+}
+
+/* Accordion RTL Fixes */
+html[dir="rtl"] .accordion-button {
+    direction: ltr;
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .accordion-button::after {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Password Input Group RTL Fixes */
+html[dir="rtl"] .input-group > .form-control {
+    border-radius: 0 0.8rem 0.8rem 0 !important;
+    border-left: none !important;
+    border-right: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2) !important;
+}
+
+html[dir="rtl"] .input-group > .btn {
+    border-radius: 0.8rem 0 0 0.8rem !important;
+    border-right: none !important;
+    border-left: 0.5px solid rgba(var(--color-charcoal-rgb), 0.2) !important;
+}
+
+/* Fix punctuation marks on auth links in RTL */
+html[dir="rtl"] .auth-link {
+    unicode-bidi: isolate;
+}
+
+/* Form Check RTL Fixes */
+html[dir="rtl"] .form-check {
+    padding-left: 0;
+    padding-right: 1.5em;
+}
+
+html[dir="rtl"] .form-check .form-check-input {
+    float: right;
+    margin-left: 0;
+    margin-right: -1.5em;
 }
