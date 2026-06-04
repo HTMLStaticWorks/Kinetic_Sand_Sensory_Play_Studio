@@ -6,29 +6,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const dropdownLinks = document.querySelectorAll('.dropdown-menu .dropdown-item');
     
+    console.log('Current path:', currentPath);
+    
     // Clear all active classes first
     navLinks.forEach(link => {
         link.classList.remove('active');
         link.removeAttribute('aria-current');
     });
+    dropdownLinks.forEach(link => {
+        link.classList.remove('active');
+    });
     
     // Helper function to extract filename from path
     const getFilename = (path) => {
+        if (!path || path === '#') return null;
         const parts = path.split('/');
-        const filename = parts.pop() || parts.pop() || '';
+        let filename = parts.pop();
+        // Handle empty strings (root path)
+        if (!filename || filename === '') {
+            filename = parts.pop() || '';
+        }
         return filename === '' ? 'index.html' : filename;
     };
     
     const currentFilename = getFilename(currentPath);
+    console.log('Current filename:', currentFilename);
     
     // Check main nav links
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
         if (linkHref) {
             const linkFilename = getFilename(linkHref);
-            if (linkFilename === currentFilename) {
+            console.log('Checking link:', link.textContent.trim(), 'href:', linkHref, 'filename:', linkFilename);
+            if (linkFilename && linkFilename === currentFilename) {
                 link.classList.add('active');
                 link.setAttribute('aria-current', 'page');
+                console.log('Activated link:', link.textContent.trim());
             }
         }
     });
@@ -38,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkHref = link.getAttribute('href');
         if (linkHref) {
             const linkFilename = getFilename(linkHref);
-            if (linkFilename === currentFilename) {
+            console.log('Checking dropdown link:', link.textContent.trim(), 'href:', linkHref, 'filename:', linkFilename);
+            if (linkFilename && linkFilename === currentFilename) {
                 link.classList.add('active');
                 const parentDropdown = link.closest('.nav-item.dropdown');
                 if (parentDropdown) {
@@ -46,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (parentLink) {
                         parentLink.classList.add('active');
                         parentLink.setAttribute('aria-current', 'page');
+                        console.log('Activated parent dropdown:', parentLink.textContent.trim());
                     }
                 }
             }
