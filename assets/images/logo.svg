@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 140" width="100%" height="100%">
+  <defs>
+    <!-- Rich Gold Gradient -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE178" />
+      <stop offset="35%" stop-color="#F3B61F" />
+      <stop offset="70%" stop-color="#C68900" />
+      <stop offset="100%" stop-color="#8F5E00" />
+    </linearGradient>
+    
+    <!-- Vibrant Rose Gradient -->
+    <linearGradient id="rose" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF9A8B" />
+      <stop offset="50%" stop-color="#FF6A88" />
+      <stop offset="100%" stop-color="#FF99AC" />
+    </linearGradient>
+    
+    <!-- Neutral Metallic for Text -->
+    <linearGradient id="textNeutral" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d3c369ff" />
+      <stop offset="50%" stop-color="#8b7749ff" />
+      <stop offset="100%" stop-color="#aa9758ff" />
+    </linearGradient>
+
+
+  </defs>
+
+  <!-- Logo Mark (Abstract Sand/Infinity Flow) -->
+  <g transform="translate(15, 20)">
+    <!-- Thick Gold Flow -->
+    <path d="M 45 10 C 20 10, 5 30, 20 50 C 35 70, 55 30, 70 50 C 85 70, 70 90, 45 90 C 20 90, 5 70, 5 70" 
+          fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- Inner Rose Flow -->
+    <path d="M 45 90 C 70 90, 85 70, 70 50 C 55 30, 35 70, 20 50 C 5 30, 20 10, 45 10 C 70 10, 85 30, 85 30" 
+          fill="none" stroke="url(#rose)" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+    
+    <!-- Sparkles -->
+    <path d="M 80 5 L 85 -5 L 90 5 L 100 10 L 90 15 L 85 25 L 80 15 L 70 10 Z" fill="url(#gold)"/>
+    <path d="M 5 80 L 8 70 L 11 80 L 21 83 L 11 86 L 8 96 L 5 86 L -5 83 Z" fill="url(#rose)" opacity="0.8"/>
+    <circle cx="45" cy="50" r="3.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(130, 75)">
+    <!-- Main Brand Name -->
+    <text x="0" y="0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="52" fill="url(#gold)" letter-spacing="1">KINETIC</text>
+    <text x="225" y="0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="52" fill="url(#textNeutral)" letter-spacing="1">STUDIO</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="32" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="16" fill="url(#rose)" textLength="420" lengthAdjust="spacing">SENSORY PLAY</text>
+  </g>
+</svg>

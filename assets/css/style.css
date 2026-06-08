@@ -337,15 +337,15 @@ main>section:first-of-type .lead {
 }
 
 .navbar-brand img,
-footer img[src*="logo.png"] {
+footer img[src*="logo."] {
     transition: var(--transition-smooth);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
     max-width: 200px;
-    background-color: rgba(251, 249, 246, 0.9);
+    background-color: transparent;
 }
 
 .navbar-brand:hover img,
-footer a:hover img[src*="logo.png"] {
+footer a:hover img[src*="logo."] {
     transform: scale(1.05);
 }
 
